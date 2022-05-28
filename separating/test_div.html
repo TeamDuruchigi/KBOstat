@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="back/css/default_div.css">
+    <link rel="stylesheet" href="back/css/strike_zone.css">
+    <style>
+    </style>
+</head>
+<body>
+<script src="back/threejs/three.js"></script>
+<script src="back/js/player_data.js"></script>
+<script src="back/js/player_sel.js"></script>
+<script>
+
+    // [팀명][등번호,이름,이미지,세부정보,포지션[스탯[]]];
+</script>
+<div id = "main">
+    <div id = "header"></div>
+    <div id = "head_menu">
+        <div id = "team_selection">
+            <script src="back/js/make_player_sel.js"></script>
+
+        </div>
+    </div>
+
+    <div id = "left_menu">
+
+        <div id="player_sel_input">
+            <form id="now_select">
+                <label id='label_for_players_first' for="select_players_first" >Choose in all player</label></br>
+                <select name ="select_players" id='select_players_first' onchange='if_select_first(); first_player_select();'>
+                    <option name = 'select_palyer'  value='0'>test_zero_select</option>");
+                    <script>
+                        let arr_length_first = 1;
+                        for(let i = 0; i <player_data.length; i++)
+                        {
+                            document.write("<option name = 'select_palyer'  value='"+i+ "_" +player_data[i][0]+"_"+player_data[i][1]+"_"+player_data[i][2]+"'>"+arr_length_first+". "+player_data[i][0]+" "+player_data[i][1]+"번 "+player_data[i][2]+"</option>");
+                            arr_length_first++;
+                        }
+                    </script>
+                </select>
+            </form>
+            <button type='button' onclick='display_second_select()' value='두 번째 선수 불러오기'>두 번째 선수 불러오기</button>
+            <form id='now_select_second' style="display: none">
+                <label id='label_for_players_second' for='select_players_second' >Choose in all player</label></br>
+                <select name ='select_players' id='select_players_second' onchange='if_select_second(); second_player_select();'>
+                    <option name = 'select_player'  value='0'>test_zero_select</option>");
+                    <script>
+
+                        let arr_length_second = 1;
+                        for(let i = 0; i <player_data.length; i++)
+                        {
+                            document.write("<option name = 'select_player'  value='"+i+ "_" +player_data[i][0]+"_"+player_data[i][1]+"_"+player_data[i][2]+"'>"+arr_length_second+". "+player_data[i][0]+" "+player_data[i][1]+"번 "+player_data[i][2]+"</option>");
+                            arr_length_second++;
+                        }
+                    </script>
+                </select>
+            </form>
+            <script>
+
+            function display_second_select(){
+                document.getElementById('now_select_second').style.display = 'block';
+            }
+            </script>
+        </div>
+            <script>
+
+            </script>
+    </div>
+    <div id = "content">
+        <h1 id="player_name">a</h1>
+        <div style="background-color: red; width: 300px; height: 300px;">
+            <img id="player_image"  width = "500px" height = "500px"  alt=sorry>
+        </div>
+        <div width="300px" height="300px" style="display: inline-block; position: relative; left: 350px; bottom: 300px;" id="radar_stat">
+            <p id = "data1" style="position: relative; left: 147px; bottom: 240px; display: inline;">타율</p>
+            <p id = "data2" style="position: relative; left: -25px; bottom: 150px; display: inline;">도루</p>
+            <p id = "data3" style="position: relative; left: -5px; bottom: 0px; display: inline;">타점</p>
+            <p id = "data4" style="position: relative; left: 110px; bottom: 0px; display: inline;">홈런</p>
+            <p id = "data5" style="position: relative; left: 130px; bottom: 150px; display: inline;">안타</p>
+            <canvas id = "threejs" width="250px" height="250px" style="display: inline-block; position: relative; left: -150px; bottom: -10px;"></canvas>
+        </div>
+        <p id="player_profile"style="display: inline-block; position: relative; left: -420px; top: -200px;"></p>
+        <p id="player_position"style="display: inline-block; position: relative; left: -420px; top: -200px;"></p>
+
+
+
+
+        <h1 id="player_name_second" style="position: relative; top : -640px; left: 800px; display: none;">a</h1>
+        <div style="background-color: red; width: 300px; height: 300px; position: relative; top : -640px; left: 800px; display: none;" id="player_image_second_div">
+            <img id="player_image_second"  width = "500px" height = "500px"  alt=sorry>
+        </div>
+        <p id="player_profile_second"style="display: inline-block; position: relative; left: 820px; top: -638px; display: none;"></p>
+        <p id="player_position_second"style="display: inline-block; position: relative; left: 820px; top: -638px; display: none;"></p>
+
+        <div id="strike_zone">
+        </div>
+        <script src="back/js/make_strike_zone.js"></script>
+        <script src="back/js/if_select_first.js"></script>
+        <script src="back/js/if_select_second.js"></script>
+
+
+    </div>
+    <div id = "footer"></div>
+</div>
+<script src="back/js/graph.js"></script>
+<script src="back/js/first_player_select.js"></script>
+<script src="back/js/second_player_select.js"></script>
+</body>
+</html>
