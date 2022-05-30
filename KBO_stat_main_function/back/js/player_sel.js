@@ -51,6 +51,7 @@ function player_sel()
             break;
 
     };
+    var arr = "<option name = 'select_player'  value='0'>test_zero_select</option>";
     for (let i = 0; i < player_data.length; i++) {
         if (player_data[i][0] == team_name) {
             arr += "<option name = 'select_palyer' value='"+i + "_" +player_data[i][0] + "_" + player_data[i][1] + "_" + player_data[i][2] + "'>" + each_length + ". " + player_data[i][0] + " " + player_data[i][1] + "번 " + player_data[i][2] + "</option>";

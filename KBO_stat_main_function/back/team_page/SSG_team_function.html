@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #team_sel_list{
+            width: 900px;
+        }
+        .player_list_div{
+            width: 300px;
+            height: 600px;
+            background-color: #880088;
+            float: left;
+            z-index: 1;
+
+        }
+        .player_list_div::after{
+            content: "";
+            opacity: 0.3;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            background-color: #003300;
+            z-index: -1;
+        }
+
+    </style>
+</head>
+<body>
+<script src="../../back/js/player_data.js"></script>
+<div id="team_sel_list">
+    <script>
+        var cnt_three = 0;
+        for(let i =0; i<player_data.length; i++)
+        {
+
+            if(player_data[i][0] == "SSG")
+            {
+                document.write("<div class='player_list_div'>" +
+                    "<img src="+player_data[i][3]+" style='width : 300px; height : 480px; background-color: grey;'>" +
+                    "<h2 style='color: white;'>"+player_data[i][1]+"</h2>"+
+                "<h3 style='color: white;'>"+player_data[i][2]+"</h3></div>");
+                cnt_three++;
+                if(cnt_three == 3)
+                {
+                    document.write("</br></br>");
+                    cnt_three = 0;
+                }
+            }
+        }
+    </script>
+<!--    <script>-->
+<!--        function player_list_hover(){-->
+<!--            var player_div = document.getElementsByClassName('player_list_div');-->
+<!--            player_div.addEventListner()-->
+<!--        }-->
+<!--    </script>-->
+</div>
+</body>
+</html>
