@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="back/css/strike_zone.css">
     <style>
         #team_sel_list{
             width: 910px;
@@ -38,7 +39,11 @@
             position: absolute;
             top: 0px;
             left: 0px;
-            background-color: darkslateblue;
+            background-color: yellowgreen;
+            width: 75%;
+            max-width: calc(100% - 200px);
+            height: calc(100% - 200px);
+            display: inline-block;
             z-index: 2;
         }
 
@@ -46,95 +51,11 @@
 </head>
 <body>
 <script src="../../back/js/player_data.js"></script>
-<div id = "player_stat" style="">
-    <h1 id="player_name">a</h1>
-    <div style="background-color: red; width: 300px; height: 300px;">
-        <img id="player_image"  width = "500px" height = "500px"  alt=sorry>
-    </div>
-    <div width="300px" height="300px" style="display: inline-block; position: relative; left: 350px; bottom: 300px;" id="radar_stat">
-        <!--            <p id = "data1" style="position: relative; left: 147px; bottom: 240px; display: inline;">타율</p>-->
-        <!--            <p id = "data2" style="position: relative; left: -25px; bottom: 150px; display: inline;">도루</p>-->
-        <!--            <p id = "data3" style="position: relative; left: -5px; bottom: 0px; display: inline;">타점</p>-->
-        <!--            <p id = "data4" style="position: relative; left: 110px; bottom: 0px; display: inline;">홈런</p>-->
-        <!--            <p id = "data5" style="position: relative; left: 130px; bottom: 150px; display: inline;">안타</p>-->
-        <p id = "data1" style="position: relative; left: 147px; bottom: 240px; display: inline;">ㅤㅤ</p>
-        <p id = "data2" style="position: relative; left: -25px; bottom: 150px; display: inline;">ㅤㅤ</p>
-        <p id = "data3" style="position: relative; left: -5px; bottom: 0px; display: inline;">ㅤㅤ</p>
-        <p id = "data4" style="position: relative; left: 110px; bottom: 0px; display: inline;">ㅤㅤ</p>
-        <p id = "data5" style="position: relative; left: 130px; bottom: 150px; display: inline;">ㅤㅤ</p>
-        <script>
-            function player_position_graph(){
-                var first_selected_player = document.getElementById('select_players_first').value.split('_');
-                var first_player_position = player_data[first_selected_player[0]][5];
-
-                if(first_player_position == "타자")
-                {
-                    document.getElementById('radar_stat').style.left = '350px';
-                    var data1 = document.getElementById('data1');
-                    var data2 = document.getElementById('data2');
-                    var data3 = document.getElementById('data3');
-                    var data4 = document.getElementById('data4');
-                    var data5 = document.getElementById('data5');
-
-                    data1.innerText = "타율";
-                    data2.innerText = "도루";
-                    data3.innerText = "타점";
-                    data4.innerText = "홈런";
-                    data5.innerText = "안타";
-
-                    data1.style.left = '147px';
-                    data2.style.left = '-25px';
-                    data3.style.left = '-5px';
-                    data4.style.left = '110px';
-                    data5.style.left = '130px';
-
-                }
-                else if(first_player_position == "투수")
-                {
-                    document.getElementById('radar_stat').style.left = '286px';
-                    var data1 = document.getElementById('data1');
-                    var data2 = document.getElementById('data2');
-                    var data3 = document.getElementById('data3');
-                    var data4 = document.getElementById('data4');
-                    var data5 = document.getElementById('data5');
-
-                    data1.innerText = "평균자책점";
-                    data2.innerText = "탈삼진";
-                    data3.innerText = "승";
-                    data4.innerText = "홀드";
-                    data5.innerText = "세이브";
-
-                    data1.style.left = '189px';
-                    data2.style.left = '-25px';
-                    data3.style.left = '0px';
-                    data4.style.left = '124px';
-                    data5.style.left = '144px';
-                }
-            }
-        </script>
-        <canvas id = "threejs" width="250px" height="250px" style="display: inline-block; position: relative; left: -150px; bottom: -10px;"></canvas>
-    </div>
-    <p id="player_profile"style="display: inline-block; position: relative; left: -420px; top: -200px;"></p>
-    <p id="player_position"style="display: inline-block; position: relative; left: -420px; top: -200px;"></p>
 
 
-
-
-    <h1 id="player_name_second" style="position: relative; top : -640px; left: 800px; display: none;">a</h1>
-    <div style="background-color: red; width: 300px; height: 300px; position: relative; top : -640px; left: 800px; display: none;" id="player_image_second_div">
-        <img id="player_image_second"  width = "500px" height = "500px"  alt=sorry>
-    </div>
-    <p id="player_profile_second"style="display: inline-block; position: relative; left: 820px; top: -638px; display: none;"></p>
-    <p id="player_position_second"style="display: inline-block; position: relative; left: 820px; top: -638px; display: none;"></p>
-
-    <div id="strike_zone">
-    </div>
-    <script src="../../back/js/make_strike_zone.js"></script>
-    <script src="../../back/js/if_select_first.js"></script>
-    <script src="../../back/js/if_select_second.js"></script>
-
-
-</div>
+<script src="../../back/js/graph.js"></script>
+<script src="../../back/js/first_player_select.js"></script>
+<script src="../../back/js/second_player_select.js"></script>
 <div id="team_sel_list">
     <script>
         var cnt_three = 0;
@@ -170,22 +91,19 @@
             }
         }
     </script>
-    <script>
-        function now_player_stat(num)
-        {
-            var choosed_player = num.split('_');
-            alert(choosed_player[0]);
-            var choosed_palyer_content = document.getElementById('team_sel_list').innerHTML;
 
-
-        }
-    </script>
-<!--    <script>-->
-<!--        function player_list_hover(){-->
-<!--            var player_div = document.getElementsByClassName('player_list_div');-->
-<!--            player_div.addEventListner()-->
-<!--        }-->
-<!--    </script>-->
 </div>
+
+<script>
+    function now_player_stat(num)
+    {
+        var choosed_player = num.split('_');
+        alert(choosed_player[0]);
+        var choosed_palyer_content = document.getElementById('team_sel_list').innerHTML;
+
+
+
+    }
+</script>
 </body>
 </html>
