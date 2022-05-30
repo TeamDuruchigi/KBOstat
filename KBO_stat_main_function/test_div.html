@@ -30,30 +30,54 @@
         <div id="player_sel_input">
             <form id="now_select">
                 <label id='label_for_players_first' for="select_players_first" >Choose in all player</label></br>
-                <select name ="select_players" id='select_players_first' onchange='if_select_first(); first_player_select();'>
-                    <option name = 'select_palyer'  value='0'>test_zero_select</option>");
+                <select name ="select_players" id='select_players_first' onchange='if_select_first(); first_player_select(); player_position_graph()'>
+                    <option name = 'select_player'  value=''>test_zero_select</option>");
                     <script>
                         let arr_length_first = 1;
                         for(let i = 0; i <player_data.length; i++)
                         {
-                            document.write("<option name = 'select_palyer'  value='"+i+ "_" +player_data[i][0]+"_"+player_data[i][1]+"_"+player_data[i][2]+"'>"+arr_length_first+". "+player_data[i][0]+" "+player_data[i][1]+"번 "+player_data[i][2]+"</option>");
+                            document.write("<option name = 'select_player'  value='"+i+ "_" +player_data[i][0]+"_"+player_data[i][1]+"_"+player_data[i][2]+"'>"+arr_length_first+". "+player_data[i][0]+" "+player_data[i][1]+"번 "+player_data[i][2]+"</option>");
                             arr_length_first++;
                         }
                     </script>
                 </select>
             </form>
-            <button type='button' onclick='display_second_select()' value='두 번째 선수 불러오기'>두 번째 선수 불러오기</button>
+            <button type='button' onclick='display_second_select(); second_player_label_change(); second_player_select_change(); ' value='두 번째 선수 불러오기'>두 번째 선수 불러오기</button>
             <form id='now_select_second' style="display: none">
                 <label id='label_for_players_second' for='select_players_second' >Choose in all player</label></br>
+                <script>
+                    function second_player_label_change(){
+
+                        var first_selected_player = document.getElementById('select_players_first').value.split('_');
+                        var first_player_position = player_data[first_selected_player[0]][5];
+                        document.getElementById('label_for_players_second').innerHTML = "Choose in "+ first_player_position + " player";
+                    }
+                </script>
                 <select name ='select_players' id='select_players_second' onchange='if_select_second(); second_player_select();'>
-                    <option name = 'select_player'  value='0'>test_zero_select</option>");
+                    <option name = 'select_player'  value='0'>test_zero_select</option>"
+<!--                    <script>-->
+<!--                        let arr_length_second = 1;-->
+<!--                        for(let i = 0; i <player_data.length; i++) {-->
+<!--                        document.write("<option name = 'select_player'  value='" + i + "_" + player_data[i][0] + "_" + player_data[i][1] + "_" + player_data[i][2] + "'>" + arr_length_second + ". " + player_data[i][0] + " " + player_data[i][1] + "번 " + player_data[i][2] + "</option>");-->
+<!--                        arr_length_second++;-->
+<!--                    }-->
+<!--                    </script>-->
                     <script>
 
-                        let arr_length_second = 1;
-                        for(let i = 0; i <player_data.length; i++)
-                        {
-                            document.write("<option name = 'select_player'  value='"+i+ "_" +player_data[i][0]+"_"+player_data[i][1]+"_"+player_data[i][2]+"'>"+arr_length_second+". "+player_data[i][0]+" "+player_data[i][1]+"번 "+player_data[i][2]+"</option>");
-                            arr_length_second++;
+                        function second_player_select_change(){
+                            var first_selected_player = document.getElementById('select_players_first').value.split('_');
+                            var first_player_position = player_data[first_selected_player[0]][5];
+                            let arr_length_second = 1;
+                            var arr = "<option name = 'select_player'  value='0'>test_zero_select</option>";
+                            for(let i = 0; i <player_data.length; i++)
+                            {
+                                if(player_data[i][5] == first_player_position)
+                                {
+                                    arr += "<option name = 'select_player'  value='" + i + "_" + player_data[i][0] + "_" + player_data[i][1] + "_" + player_data[i][2] + "'>" + arr_length_second + ". " + player_data[i][0] + " " + player_data[i][1] + "번 " + player_data[i][2] + "</option>";
+                                    arr_length_second++;
+                                }
+                            }
+                            document.getElementById('select_players_second').innerHTML = arr;
                         }
                     </script>
                 </select>
@@ -75,11 +99,66 @@
             <img id="player_image"  width = "500px" height = "500px"  alt=sorry>
         </div>
         <div width="300px" height="300px" style="display: inline-block; position: relative; left: 350px; bottom: 300px;" id="radar_stat">
-            <p id = "data1" style="position: relative; left: 147px; bottom: 240px; display: inline;">타율</p>
-            <p id = "data2" style="position: relative; left: -25px; bottom: 150px; display: inline;">도루</p>
-            <p id = "data3" style="position: relative; left: -5px; bottom: 0px; display: inline;">타점</p>
-            <p id = "data4" style="position: relative; left: 110px; bottom: 0px; display: inline;">홈런</p>
-            <p id = "data5" style="position: relative; left: 130px; bottom: 150px; display: inline;">안타</p>
+<!--            <p id = "data1" style="position: relative; left: 147px; bottom: 240px; display: inline;">타율</p>-->
+<!--            <p id = "data2" style="position: relative; left: -25px; bottom: 150px; display: inline;">도루</p>-->
+<!--            <p id = "data3" style="position: relative; left: -5px; bottom: 0px; display: inline;">타점</p>-->
+<!--            <p id = "data4" style="position: relative; left: 110px; bottom: 0px; display: inline;">홈런</p>-->
+<!--            <p id = "data5" style="position: relative; left: 130px; bottom: 150px; display: inline;">안타</p>-->
+            <p id = "data1" style="position: relative; left: 147px; bottom: 240px; display: inline;">ㅤㅤ</p>
+            <p id = "data2" style="position: relative; left: -25px; bottom: 150px; display: inline;">ㅤㅤ</p>
+            <p id = "data3" style="position: relative; left: -5px; bottom: 0px; display: inline;">ㅤㅤ</p>
+            <p id = "data4" style="position: relative; left: 110px; bottom: 0px; display: inline;">ㅤㅤ</p>
+            <p id = "data5" style="position: relative; left: 130px; bottom: 150px; display: inline;">ㅤㅤ</p>
+            <script>
+                function player_position_graph(){
+                    var first_selected_player = document.getElementById('select_players_first').value.split('_');
+                    var first_player_position = player_data[first_selected_player[0]][5];
+
+                    if(first_player_position == "타자")
+                    {
+                        document.getElementById('radar_stat').style.left = '350px';
+                        var data1 = document.getElementById('data1');
+                        var data2 = document.getElementById('data2');
+                        var data3 = document.getElementById('data3');
+                        var data4 = document.getElementById('data4');
+                        var data5 = document.getElementById('data5');
+
+                        data1.innerText = "타율";
+                        data2.innerText = "도루";
+                        data3.innerText = "타점";
+                        data4.innerText = "홈런";
+                        data5.innerText = "안타";
+
+                        data1.style.left = '147px';
+                        data2.style.left = '-25px';
+                        data3.style.left = '-5px';
+                        data4.style.left = '110px';
+                        data5.style.left = '130px';
+
+                    }
+                    else if(first_player_position == "투수")
+                    {
+                        document.getElementById('radar_stat').style.left = '286px';
+                        var data1 = document.getElementById('data1');
+                        var data2 = document.getElementById('data2');
+                        var data3 = document.getElementById('data3');
+                        var data4 = document.getElementById('data4');
+                        var data5 = document.getElementById('data5');
+
+                        data1.innerText = "평균자책점";
+                        data2.innerText = "탈삼진";
+                        data3.innerText = "승";
+                        data4.innerText = "홀드";
+                        data5.innerText = "세이브";
+
+                        data1.style.left = '189px';
+                        data2.style.left = '-25px';
+                        data3.style.left = '0px';
+                        data4.style.left = '124px';
+                        data5.style.left = '144px';
+                    }
+                }
+            </script>
             <canvas id = "threejs" width="250px" height="250px" style="display: inline-block; position: relative; left: -150px; bottom: -10px;"></canvas>
         </div>
         <p id="player_profile"style="display: inline-block; position: relative; left: -420px; top: -200px;"></p>
