@@ -15,19 +15,19 @@ function open_team_page(){switch (team_sel_num) {
         break;
     }
     case 2: {
-        team_name = "두산";
+        team_name = "Dusan";
         break;
     }
     case 3: {
-        team_name = "롯데";
+        team_name = "Lotte";
         break;
     }
     case 4: {
-        team_name = "키움";
+        team_name = "Kiwoom";
         break;
     }
     case 5: {
-        team_name = "삼성";
+        team_name = "Samsung";
         break;
     }
     case 6: {
@@ -39,7 +39,7 @@ function open_team_page(){switch (team_sel_num) {
         break;
     }
     case 8: {
-        team_name = "한화";
+        team_name = "Hanwha";
         break;
     }
     case 9: {

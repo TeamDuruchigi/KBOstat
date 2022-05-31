@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="../../back/css/strike_zone_each.css">
+  <style>
+    #team_sel_list{
+      width: 1208px;
+      background-color: darkslateblue;
+      display: inline-block;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
+    .player_list_div{
+      width: 400px;
+      height: 600px;
+      background-color: #880088;
+      float: left;
+      z-index: 1;
+      border: 1px solid white;
+
+    }
+    .player_list_hover:hover::after{
+      content: "";
+      opacity: 0.3;
+      position: absolute;
+      width: 400px;
+      height: 600px;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      background-color: #003300;
+      z-index: 1;
+    }
+
+    #chose_player_stat{
+      position: absolute;
+      width: 1200px;
+      height: 500px;
+      left: 0px;
+      top: 0px;
+      background-color: white;
+      z-index: 2;
+    }
+
+  </style>
+</head>
+<body>
+<script src="../../back/threejs/three.js"></script>
+<script src="../../back/js/player_data.js"></script>
+<script src="../../back/js/player_select_each.js"></script>
+
+
+<div id="team_sel_list">
+  <script>
+    let cnt_three = 0;
+    for(let i =0; i<player_data.length; i++)
+    {
+
+      if(player_data[i][0] == "LG")
+      {
+        document.write("<div class='player_list_div' id='"+i+"_player' onclick ='now_player_stat(this.id); strike_zone_each_team(this.id); player_select_each(this.id); player_position_graph(this.id);'>" +
+                "<img class='player_list_hover' src="+player_data[i][3]+" style='width : 400px; height : 480px; background-color: #005555;'>" +
+                "<h2 style='color: white;'>"+player_data[i][1]+"</h2>"+
+                "<h3 style='color: white;'>"+player_data[i][2]+"</h3></div>");
+        var ith_player_style = document.getElementById(i+'_player').style;
+        cnt_three++;
+        if(cnt_three == 3)
+        {
+          document.write("</br></br>");
+          cnt_three = 0;
+        }
+
+        ith_player_style.content = "";
+        ith_player_style.opacity = '1';
+        ith_player_style.position = 'relative';
+        ith_player_style.width = '400px';
+        ith_player_style.height = '600px';
+        ith_player_style.top = '0px';
+        ith_player_style.left = '0px';
+        ith_player_style.right = '0px';
+        ith_player_style.bottom = '0px';
+        ith_player_style.backgroundColor = '0xff00ff';
+        ith_player_style.zIndex = '1';
+
+      }
+    }
+  </script>
+
+</div>
+
+<div id="chose_player_stat" style="display: block;">
+
+  <h1 id="player_name">a</h1>
+  <div style="background-color: red; width: 300px; height: 300px;">
+    <img id="player_image"  width = "500px" height = "500px"  alt=sorry>
+  </div>
+  <div width="300px" height="300px" style="display: inline-block; position: absolute; left: 350px; bottom: 300px;" id="radar_stat">
+    <!--            <p id = "data1" style="position: relative; left: 147px; bottom: 240px; display: inline;">타율</p>-->
+    <!--            <p id = "data2" style="position: relative; left: -25px; bottom: 150px; display: inline;">도루</p>-->
+    <!--            <p id = "data3" style="position: relative; left: -5px; bottom: 0px; display: inline;">타점</p>-->
+    <!--            <p id = "data4" style="position: relative; left: 110px; bottom: 0px; display: inline;">홈런</p>-->
+    <!--            <p id = "data5" style="position: relative; left: 130px; bottom: 150px; display: inline;">안타</p>-->
+    <p id = "data1" style="position: relative; left: 147px; bottom: 85px; display: inline;">ㅤㅤ</p>
+    <p id = "data2" style="position: relative; left: -25px; bottom: 0px; display: inline;">ㅤㅤ</p>
+    <p id = "data3" style="position: relative; left: -5px; bottom: -150px; display: inline;">ㅤㅤ</p>
+    <p id = "data4" style="position: relative; left: 110px; bottom: -150px; display: inline;">ㅤㅤ</p>
+    <p id = "data5" style="position: relative; left: 130px; bottom: 0px; display: inline;">ㅤㅤ</p>
+    <script>
+      function player_position_graph(num){
+        var first_selected_player = num.split('_');
+        var first_player_position = player_data[first_selected_player[0]][5];
+
+        if(first_player_position == "타자")
+        {
+          document.getElementById('radar_stat').style.left = '350px';
+          var data1 = document.getElementById('data1');
+          var data2 = document.getElementById('data2');
+          var data3 = document.getElementById('data3');
+          var data4 = document.getElementById('data4');
+          var data5 = document.getElementById('data5');
+
+          data1.innerText = "타율";
+          data2.innerText = "도루";
+          data3.innerText = "타점";
+          data4.innerText = "홈런";
+          data5.innerText = "안타";
+
+          data1.style.left = '147px';
+          data2.style.left = '-25px';
+          data3.style.left = '-5px';
+          data4.style.left = '110px';
+          data5.style.left = '130px';
+
+        }
+        else if(first_player_position == "투수")
+        {
+          document.getElementById('radar_stat').style.left = '286px';
+          var data1 = document.getElementById('data1');
+          var data2 = document.getElementById('data2');
+          var data3 = document.getElementById('data3');
+          var data4 = document.getElementById('data4');
+          var data5 = document.getElementById('data5');
+
+          data1.innerText = "평균자책점";
+          data2.innerText = "탈삼진";
+          data3.innerText = "승";
+          data4.innerText = "홀드";
+          data5.innerText = "세이브";
+
+          data1.style.left = '189px';
+          data2.style.left = '-25px';
+          data3.style.left = '0px';
+          data4.style.left = '124px';
+          data5.style.left = '144px';
+        }
+      }
+    </script>
+
+    <canvas id = "threejs" width="250px" height="250px" style="display: inline-block; position: relative; top:160px; left: -150px;"></canvas>
+  </div>
+  <p id="player_profile"style="display: inline-block; position: relative; left: 0px; top: 0px;"></p>
+  <p id="player_position"style="display: inline-block; position: relative; left: 0px; top: 0px;"></p>
+  <div id="strike_zone">
+  </div>
+  <div id="close_stat" onclick="back_player_list()">
+    <p style="position: absolute; right: 30px; top: 0px;">X</p>
+  </div>
+</div>
+
+
+
+<script src="../../back/js/graph_each_team.js"></script>
+<script src="../../back/js/strike_zone_each_team.js"></script>
+<script>
+  function now_player_stat(num)
+  {
+    document.getElementById('chose_player_stat').style.display='block';
+  }
+  function back_player_list(){
+    document.getElementById('chose_player_stat').style.display='none';
+
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+
+#strike_zone{
+    width: 310px;
+    height: 310px;
+    display: inline-block;
+    position: absolute;
+    top: 80px;
+    left: 750px;
+    /*외부 사용시 필요 크기에 맞춰 이거만 수정하면 될꺼임*/
+}
+.strike_zone{
+    width: calc(20% - 4px);
+    height: calc(20% - 4px);
+    /*strike_zone 메인 div의 크기 비례 / 5 -(border사이즈)*/
+    display: inline-block;
+    text-align: center;
+    border: solid 1px black;
+    border-collapse: collapse;
+    line-height: calc(500% - 8px);
+    /*strike_zone 메인 div의 크기 비례 + font의 디폴트 사이즈 픽셀*/
+
+}
