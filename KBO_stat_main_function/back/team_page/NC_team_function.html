@@ -63,7 +63,7 @@
             if(player_data[i][0] == "NC")
             {
                 document.write("<div class='player_list_div' id='"+i+"_player' onclick ='now_player_stat(this.id); strike_zone_each_team(this.id); player_select_each(this.id); player_position_graph(this.id);'>" +
-                    "<img class='player_list_hover' src="+player_data[i][3]+" style='width : 400px; height : 480px; background-color: #005555;'>" +
+                    "<img class='player_list_hover' src=../../"+player_data[i][3]+" style='width : 400px; height : 480px; background-color: #005555;'>" +
                     "<h2 style='color: white;'>"+player_data[i][1]+"</h2>"+
                     "<h3 style='color: white;'>"+player_data[i][2]+"</h3></div>");
                 var ith_player_style = document.getElementById(i+'_player').style;

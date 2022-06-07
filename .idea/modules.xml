@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/KBOstat.iml" filepath="$PROJECT_DIR$/.idea/KBOstat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/KBOstat2.iml" filepath="$PROJECT_DIR$/.idea/KBOstat2.iml" />
     </modules>
   </component>
 </project>
