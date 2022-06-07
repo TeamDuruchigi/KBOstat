@@ -1,7 +1,7 @@
 function strike_zone_each_team(num){
     var selected_player = num.split('_');
     document.getElementById("player_name").innerHTML = player_data[selected_player[0]][0] + " " + player_data[selected_player[0]][1] + "번 " + player_data[selected_player[0]][2];
-    document.getElementById("player_image").src = player_data[selected_player[0]][3];
+    document.getElementById("player_image").src = '../../'+player_data[selected_player[0]][3];
     document.getElementById("player_image").alt = player_data[selected_player[0]][0] + " " + player_data[selected_player[0]][1] + "번 " + player_data[selected_player[0]][2];
     document.getElementById("player_profile").innerHTML = player_data[selected_player[0]][4];
     document.getElementById("player_position").innerHTML = player_data[selected_player[0]][5];

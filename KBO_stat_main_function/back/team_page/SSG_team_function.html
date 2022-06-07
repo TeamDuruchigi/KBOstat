@@ -92,13 +92,18 @@
 
 </div>
 
-<div id="chose_player_stat" style="display: none;">
+<div id="chose_player_stat" style="display: none; position: fixed;">
 
     <h1 id="player_name">a</h1>
     <div style="background-color: red; width: 300px; height: 300px;">
-        <img id="player_image"  width = "500px" height = "500px"  alt=sorry>
+        <img id="player_image"  width = "500px" height = "500px"  alt=sorry src="">
     </div>
     <div width="300px" height="300px" style="display: inline-block; position: absolute; left: 350px; bottom: 300px;" id="radar_stat">
+        <!--            <p id = "data1" style="position: relative; left: 147px; bottom: 240px; display: inline;">타율</p>-->
+        <!--            <p id = "data2" style="position: relative; left: -25px; bottom: 150px; display: inline;">도루</p>-->
+        <!--            <p id = "data3" style="position: relative; left: -5px; bottom: 0px; display: inline;">타점</p>-->
+        <!--            <p id = "data4" style="position: relative; left: 110px; bottom: 0px; display: inline;">홈런</p>-->
+        <!--            <p id = "data5" style="position: relative; left: 130px; bottom: 150px; display: inline;">안타</p>-->
         <p id = "data1" style="position: relative; left: 147px; bottom: 85px; display: inline;">ㅤㅤ</p>
         <p id = "data2" style="position: relative; left: -25px; bottom: 0px; display: inline;">ㅤㅤ</p>
         <p id = "data3" style="position: relative; left: -5px; bottom: -150px; display: inline;">ㅤㅤ</p>
@@ -108,7 +113,7 @@
 
         <canvas id = "threejs" width="250px" height="250px" style="display: inline-block; position: relative; top:160px; left: -150px;"></canvas>
     </div>
-        <p id="player_profile"style="display: inline-block; position: relative; left: 0px; top: 0px;"></p>
+    <p id="player_profile"style="display: inline-block; position: relative; left: 0px; top: 0px;"></p>
     <p id="player_position"style="display: inline-block; position: relative; left: 0px; top: 0px;"></p>
     <div id="strike_zone">
     </div>
