@@ -2,6 +2,100 @@ function if_select_first(){
     var selected_player = document.getElementById('select_players_first').value.split('_');
     document.getElementById("player_name").innerHTML = player_data[selected_player[0]][0] + " " + player_data[selected_player[0]][1] + "번 " + player_data[selected_player[0]][2];
     document.getElementById("player_image").src = player_data[selected_player[0]][3];
+    switch (player_data[selected_player[0]][0])
+    {
+        case "SSG":
+            {
+                document.getElementById("player_image").style.width = '234px';
+                document.getElementById("player_image").style.height = '300px';
+                document.getElementById("player_image").style.position = 'relative';
+                document.getElementById("player_image").style.left = '33px';
+                document.getElementById("player_image").style.top = '0px';
+                break;
+            }
+        case "KT":
+            {
+                document.getElementById("player_image").style.width = '300px';
+                document.getElementById("player_image").style.height = '300px';
+                document.getElementById("player_image").style.position = 'relative';
+                // document.getElementById("player_image").style.left = '33px';
+                break;
+            }
+        case "LG":
+            {
+                document.getElementById("player_image").style.width = '300px';
+                document.getElementById("player_image").style.height = '225px';
+                document.getElementById("player_image").style.position = 'relative';
+                document.getElementById("player_image").style.left = '0px';
+                document.getElementById("player_image").style.top = '37px';
+                break;
+            }
+        case "NC":
+            {
+                document.getElementById("player_image").style.width = '300px';
+                document.getElementById("player_image").style.height = '300px';
+                document.getElementById("player_image").style.position = 'relative';
+                document.getElementById("player_image").style.left = '0px';
+                document.getElementById("player_image").style.top = '0px';
+                break;
+            }
+        case "KIA":
+            {
+                document.getElementById("player_image").style.width = '300px';
+                document.getElementById("player_image").style.height = '249px';
+                document.getElementById("player_image").style.position = 'relative'
+                document.getElementById("player_image").style.left = '0px';
+                document.getElementById("player_image").style.top = '25px';
+                break;
+            }
+        case "두산":
+            {
+                document.getElementById("player_image").style.width = '283px';
+                document.getElementById("player_image").style.height = '300px';
+                document.getElementById("player_image").style.position = 'relative';
+                document.getElementById("player_image").style.left = '8px';
+                document.getElementById("player_image").style.top = '0px';
+                break;
+            }
+        case "롯데":
+            {
+                document.getElementById("player_image").style.width = '290px';
+                document.getElementById("player_image").style.height = '300px';
+                document.getElementById("player_image").style.position = 'relative';
+                document.getElementById("player_image").style.left = '5px';
+                document.getElementById("player_image").style.top = '0px';
+                break;
+            }
+        case "삼성":
+            {
+                document.getElementById("player_image").style.width = '300px';
+                document.getElementById("player_image").style.height = '300px';
+                document.getElementById("player_image").style.position = 'relative';
+                document.getElementById("player_image").style.left = '0px';
+                document.getElementById("player_image").style.top = '0px';
+                break;
+            }
+        case "키움":
+            {
+                document.getElementById("player_image").style.width = '300px';
+                document.getElementById("player_image").style.height = '300px';
+                document.getElementById("player_image").style.position = 'relative';
+                document.getElementById("player_image").style.left = '0px';
+                document.getElementById("player_image").style.top = '0px';
+                break;
+            }
+        case "한화":
+            {
+                document.getElementById("player_image").style.width = '238px';
+                document.getElementById("player_image").style.height = '300px';
+                document.getElementById("player_image").style.position = 'relative';
+                document.getElementById("player_image").style.left = '31px';
+                document.getElementById("player_image").style.top = '0px';
+                break;
+            }
+        default:
+            break;
+    }
     document.getElementById("player_image").alt = player_data[selected_player[0]][0] + " " + player_data[selected_player[0]][1] + "번 " + player_data[selected_player[0]][2];
     document.getElementById("player_profile").innerHTML = player_data[selected_player[0]][4];
     document.getElementById("player_position").innerHTML = player_data[selected_player[0]][5];

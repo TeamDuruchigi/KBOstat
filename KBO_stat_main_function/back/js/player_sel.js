@@ -51,15 +51,16 @@ function player_sel()
             break;
 
     };
-    var arr = "<option name = 'select_player'  value='0'>test_zero_select</option>";
-    for (let i = 0; i < player_data.length; i++) {
-        if (player_data[i][0] == team_name) {
-            arr += "<option name = 'select_palyer' value='"+i + "_" +player_data[i][0] + "_" + player_data[i][1] + "_" + player_data[i][2] + "'>" + each_length + ". " + player_data[i][0] + " " + player_data[i][1] + "번 " + player_data[i][2] + "</option>";
-            each_length++;
-        }
-    }
-    document.getElementById("label_for_players_first").innerHTML = "Choose in "+ team_name + "player";
-    document.getElementById("select_players_first").innerHTML = arr;
-    document.getElementById("label_for_players_second").innerHTML = "Choose in "+ team_name + "player";
-    document.getElementById("select_players_second").innerHTML = arr;
+    // var arr = "<option name = 'select_player'  value='0'>test_zero_select</option>";
+    // for (let i = 0; i < player_data.length; i++) {
+    //     alert(player_data[i][0])
+    //     if (player_data[i][0] == team_name) {
+    //         arr += "<option name = 'select_palyer' value='"+i + "_" +player_data[i][0] + "_" + player_data[i][1] + "_" + player_data[i][2] + "'>" + each_length + ". " + player_data[i][0] + " " + player_data[i][1] + "번 " + player_data[i][2] + "</option>";
+    //         each_length++;
+    //     }
+    // }
+    // document.getElementById("label_for_players_first").innerHTML = "Choose in "+ team_name + "player";
+    // document.getElementById("select_players_first").innerHTML = arr;
+    // document.getElementById("label_for_players_second").innerHTML = "Choose in "+ team_name + "player";
+    // document.getElementById("select_players_second").innerHTML = arr;
 }
