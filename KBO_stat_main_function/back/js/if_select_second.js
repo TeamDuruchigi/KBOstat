@@ -1,6 +1,3 @@
-
-
-
 function if_select_second(){
     var strike_zone_reposition = document.getElementById('strike_zone').style;
     strike_zone_reposition.display = 'none';

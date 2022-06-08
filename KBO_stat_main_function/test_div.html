@@ -68,16 +68,15 @@
                             var first_selected_player = document.getElementById('select_players_first').value.split('_');
                             var first_player_position = player_data[first_selected_player[0]][5];
                             let arr_length_second = 1;
-                            var arr = "<option name = 'select_player'  value='0'>test_zero_select</option>";
+                            document.getElementById('select_players_second').innerHTML = "<option name = 'select_player'  value='0'>test_zero_select</option>";
                             for(let i = 0; i <player_data.length; i++)
                             {
                                 if(player_data[i][5] == first_player_position)
                                 {
-                                    arr += "<option name = 'select_player'  value='" + i + "_" + player_data[i][0] + "_" + player_data[i][1] + "_" + player_data[i][2] + "'>" + arr_length_second + ". " + player_data[i][0] + " " + player_data[i][1] + "번 " + player_data[i][2] + "</option>";
+                                    document.getElementById('select_players_second').innerHTML += "<option name = 'select_player'  value='" + i + "_" + player_data[i][0] + "_" + player_data[i][1] + "_" + player_data[i][2] + "'>" + arr_length_second + ". " + player_data[i][0] + " " + player_data[i][1] + "번 " + player_data[i][2] + "</option>";
                                     arr_length_second++;
                                 }
                             }
-                            document.getElementById('select_players_second').innerHTML = arr;
                         }
                     </script>
                 </select>

@@ -1,7 +1,10 @@
 
 var radar_second;
 function second_player_select(){
+    var first_selected_player = document.getElementById('select_players_first').value.split('_');
     var selected_player = document.getElementById('select_players_second').value.split('_');
+
+
     // alert(player_data[selected_player[0]][7]);
     // alert(player_data[selected_player[0]][8]);
     // alert(player_data[selected_player[0]][9]);
@@ -17,17 +20,14 @@ function second_player_select(){
     {
         case "SSG":
         {
-            alert("SSG");
             team_bg_color_primary='#CE0E2D';
             team_bg_color_secondary='#000000';
             team_text_color_primary='#ffffff';
             team_text_color_secondary='#ffffff';
-
             break;
         }
         case "KT":
         {
-            alert("KT");
             team_bg_color_primary='#000000';
             team_bg_color_secondary='#EB1C24';
             team_text_color_primary='#ffffff';
@@ -36,7 +36,6 @@ function second_player_select(){
         }
         case "LG":
         {
-            alert("LG");
             team_bg_color_primary='#C30452';
             team_bg_color_secondary='#000000';
             team_text_color_primary='#ffffff';
@@ -45,7 +44,6 @@ function second_player_select(){
         }
         case "NC":
         {
-            alert("NC");
             team_bg_color_primary='#315288';
             team_bg_color_secondary='#AF917B';
             team_text_color_primary='#ffffff';
@@ -54,7 +52,6 @@ function second_player_select(){
         }
         case "KIA":
         {
-            alert("KIA");
             team_bg_color_primary='#EA0029';
             team_bg_color_secondary='#06141F';
             team_text_color_primary='#ffffff';
@@ -63,7 +60,6 @@ function second_player_select(){
         }
         case "두산":
         {
-            alert("두산");
             team_bg_color_primary='#131230';
             team_bg_color_secondary='#ED1C24';
             team_text_color_primary='#ffffff';
@@ -72,7 +68,6 @@ function second_player_select(){
         }
         case "롯데":
         {
-            alert("롯데");
             team_bg_color_primary='#002955';
             team_bg_color_secondary='#DC0232';
             team_text_color_primary='#ffffff';
@@ -81,7 +76,6 @@ function second_player_select(){
         }
         case "삼성":
         {
-            alert("삼성");
             team_bg_color_primary='#074CA1';
             team_bg_color_secondary='#C0C0C0';
             team_text_color_primary='#ffffff';
@@ -90,7 +84,6 @@ function second_player_select(){
         }
         case "키움":
         {
-            alert("키움");
             team_bg_color_primary='#820024';
             team_bg_color_secondary='#B07F4A';
             team_text_color_primary='#ffffff';
@@ -99,7 +92,6 @@ function second_player_select(){
         }
         case "한화":
         {
-            alert("한화");
             team_bg_color_primary='#FF6600';
             team_bg_color_secondary='#000000';
             team_text_color_primary='#ffffff';
@@ -109,12 +101,16 @@ function second_player_select(){
         default:
             break;
     }
+    if(player_data[first_selected_player[0]][0] == player_data[selected_player[0]][0])
+        var material_second_sel = new THREE.MeshBasicMaterial({ color: team_bg_color_secondary, opacity:0.5, transparent: true,});
+    else
+        var material_second_sel = new THREE.MeshBasicMaterial({ color: team_bg_color_primary, opacity:0.5, transparent: true,});
+    //같은팀 같은색 분별
+    //     var material_second_sel = new THREE.MeshBasicMaterial({ color: team_bg_color_secondary, opacity:0.5, transparent: true,});
 
-    var material_second_sel = new THREE.MeshBasicMaterial({ color: team_bg_color_primary, opacity:0.5,
-        transparent: true,});
     if(player_data[selected_player[0]][5] == "타자")
     {
-        scene.remove(radar_first);
+        scene.remove(radar_second);
         var shape_second = new THREE.Shape();
         if(player_data[selected_player[0]][7] < 0.5)
         {
@@ -130,7 +126,7 @@ function second_player_select(){
             if( player_data[selected_player[0]][10] < 3)
                 shape_second.lineTo(x + cos54 * y_length * player_data[selected_player[0]][10] / 3, y - sin54 * y_length * player_data[selected_player[0]][10] / 3);
             else
-                shape_first.lineTo(x + cos54 * y_length, y - sin54 * y_length);
+                shape_second.lineTo(x + cos54 * y_length, y - sin54 * y_length);
             if( player_data[selected_player[0]][11] < 40)
                 shape_second.lineTo(x + sin72 * y_length * player_data[selected_player[0]][11] / 40, y + cos72 * y_length * player_data[selected_player[0]][11] / 40);
             else
@@ -159,14 +155,14 @@ function second_player_select(){
             shape_second.moveTo(x, y + y_length * 2);
 
         }
-        var geometry_first = new THREE.ShapeGeometry(shape_second);
-        radar_first = new THREE.Mesh(geometry_first, material_second_sel);
-        scene.add(radar_first);
+        var geometry_second = new THREE.ShapeGeometry(shape_second);
+        radar_second = new THREE.Mesh(geometry_second, material_second_sel);
+        scene.add(radar_second);
         renderer.render(scene, camera);
     }
     else// 투수일 경우
     {
-        scene.remove(radar_first);
+        scene.remove(radar_second);
         var shape_second = new THREE.Shape();
         //if else문 사용이유
         // 최상위값 쳐내기(그래프 뚫는거 방지)

@@ -7,7 +7,6 @@ function player_select_each(num){
     var team_text_color_secondary;
 
     var choose_color = player_data[selected_player[0]][0];
-    alert(num);
     switch (choose_color)
     {
         case "SSG":

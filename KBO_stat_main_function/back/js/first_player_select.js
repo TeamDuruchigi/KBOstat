@@ -17,17 +17,14 @@ function first_player_select(){
     {
         case "SSG":
         {
-            alert("SSG");
             team_bg_color_primary='#CE0E2D';
             team_bg_color_secondary='#000000';
             team_text_color_primary='#ffffff';
             team_text_color_secondary='#ffffff';
-
             break;
         }
         case "KT":
         {
-            alert("KT");
             team_bg_color_primary='#000000';
             team_bg_color_secondary='#EB1C24';
             team_text_color_primary='#ffffff';
@@ -36,7 +33,6 @@ function first_player_select(){
         }
         case "LG":
         {
-            alert("LG");
             team_bg_color_primary='#C30452';
             team_bg_color_secondary='#000000';
             team_text_color_primary='#ffffff';
@@ -45,7 +41,6 @@ function first_player_select(){
         }
         case "NC":
         {
-            alert("NC");
             team_bg_color_primary='#315288';
             team_bg_color_secondary='#AF917B';
             team_text_color_primary='#ffffff';
@@ -54,7 +49,6 @@ function first_player_select(){
         }
         case "KIA":
         {
-            alert("KIA");
             team_bg_color_primary='#EA0029';
             team_bg_color_secondary='#06141F';
             team_text_color_primary='#ffffff';
@@ -63,7 +57,6 @@ function first_player_select(){
         }
         case "두산":
         {
-            alert("두산");
             team_bg_color_primary='#131230';
             team_bg_color_secondary='#ED1C24';
             team_text_color_primary='#ffffff';
@@ -72,7 +65,6 @@ function first_player_select(){
         }
         case "롯데":
         {
-            alert("롯데");
             team_bg_color_primary='#002955';
             team_bg_color_secondary='#DC0232';
             team_text_color_primary='#ffffff';
@@ -81,7 +73,6 @@ function first_player_select(){
         }
         case "삼성":
         {
-            alert("삼성");
             team_bg_color_primary='#074CA1';
             team_bg_color_secondary='#C0C0C0';
             team_text_color_primary='#ffffff';
@@ -90,7 +81,6 @@ function first_player_select(){
         }
         case "키움":
         {
-            alert("키움");
             team_bg_color_primary='#820024';
             team_bg_color_secondary='#B07F4A';
             team_text_color_primary='#ffffff';
@@ -99,7 +89,6 @@ function first_player_select(){
         }
         case "한화":
         {
-            alert("한화");
             team_bg_color_primary='#FF6600';
             team_bg_color_secondary='#000000';
             team_text_color_primary='#ffffff';
