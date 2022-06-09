@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KBOSTAT - 키움 히어로즈</title>
+    <!-- jquery -->
+  	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      body{
+        background-color: black;
+        color: white;
+      }
+      .mt-6{
+        margin-top: 80px;
+      }
+      .bgimg{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <!-- NavBar -->
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark flex-column" style="background-color: black;">
+        <div class="container">
+          <a class="navbar-brand" href="../main.html">KBOINFO</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  구단
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown" style="background-color: black;">
+                  <li><a class="dropdown-item" href="wizinfo.html">KT</a></li>
+                  <li><a class="dropdown-item" href="bearsinfo.html">두산</a></li>
+                  <li><a class="dropdown-item" href="lionsinfo.html">삼성</a></li>
+                  <li><a class="dropdown-item" href="twinsinfo.html">LG</a></li>
+                  <li><a class="dropdown-item active" href="heroesinfo.html">키움</a></li>
+                  <li><a class="dropdown-item" href="landersinfo.html">SSG</a></li>
+                  <li><a class="dropdown-item" href="dinosinfo.html">NC</a></li>
+                  <li><a class="dropdown-item" href="giantsinfo.html">롯데</a></li>
+                  <li><a class="dropdown-item" href="tigersinfo.html">KIA</a></li>
+                  <li><a class="dropdown-item" href="eaglesinfo.html">한화</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">전력비교</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+        <div class="container justify-content-center navbar-expand">
+          <ul class="navbar-nav mb-2">
+            <li class="nav-item mx-5"><a class="nav-link active" href="#">구단소개</a></li>
+            <li class="nav-item mx-5"><a class="nav-link" href="#">선수기록</a></li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Content -->
+      <div>
+        <!-- 팀 소개 -->
+        <div class="container mt-6">
+          <br><img class="float-end" src="./image/heroeslogo.png" alt="teamlogo" style="display:inline-block; width:200px;">
+          <h1 style="color: rgb(130, 0, 36);"><b>키움 히어로즈</b></h1>
+          <h3>&nbsp&nbsp WIN THE CHAMPIONSHIP, HEROES!</h3><br>
+          <p>서울특별시를 연고로 한 한국 프로 야구(KBO)의 제10구단</p>
+          <hr style="color: rgb(130, 0, 36); height: 2px;">
+        </div>
+        <!-- 구장위치 -->
+        <div class="container text-end my-5" data-aos="fade-down" data-aos-duration="900">
+          <div class="bgimg p-4" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./image/heroesfield.jpg');">
+            <h2>야구장</h2><br>
+            <div class="row">
+              <div class="col-sm-8"></div>
+              <div class="col-sm-4">
+                <h4>홈구장</h4>
+                <p>서울특별시 구로구 고척동<br>고척 스카이돔</p>
+                <div id="heroesPark" style="width: 100%; height: 300px; display: inline-block"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 연혁 -->
+        <div class="container bgimg my-5" data-aos="fade-down" data-aos-duration="900">
+          <div class="bgimg p-4" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./image/heroesflag.jpg');">
+            <h2>연혁</h2><br>
+            <p>2008년 우리 히어로즈 창단</p>
+            <p>2008년 구단명 서울 히어로즈 변경</p>
+            <p>2010년 구단명 넥센 히어로즈 변경</p>
+            <p>2010년 홈구장 고척 스카이돔으로 변경</p>
+            <p>2013년 포스트시즌 진출</p>
+            <p>2014년 포스트시즌 진출</p>
+            <p>2014년 한국시리즈 준우승</p>
+            <p>2015년 포스트시즌 진출</p>
+            <p>2016년 포스트시즌 진출</p>
+            <p>2018년 포스트시즌 진출</p>
+            <p>2019년 구단명 키움 히어로즈 변경</p>
+            <p>2019년 포스트시즌 진출</p>
+            <p>2019년 한국시리즈 준우승</p>
+            <p>2020년 포스트시즌 진출</p>
+            <p>2021년 포스트시즌 진출</p>
+          </div>
+        </div>
+        <!-- 우승 -->
+        <div class="container text-end bgimg my-5" data-aos="fade-down" data-aos-duration="900">
+          <div class="bgimg p-4" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./image/eaglesparklight.jpg');">
+            <h2>한국시리즈 우승</h2><br>
+            <h4>☆ 0회</h4><br>
+          </div>
+        </div>
+        <!-- 마스코트 -->
+        <div class="container bgimg my-5" data-aos="fade-down" data-aos-duration="900">
+          <div class="bgimg p-4" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./image/heroesplayers.jpg');">
+            <h2>마스코트</h2>
+            <div data-aos="fade-right" data-aos-offset="400" data-aos-easing="ease-in-sine">
+              <div class="row">
+                <div class="col-sm-4 text-center">
+                  <img src="./image/teokdori.png" alt="턱돌이" class="w-75">
+                  <p>턱돌이</p>
+                </div>
+                <div class="col-sm-4 text-center">
+                  <img src="./image/domdomi.png" alt="돔돔이" class="w-75">
+                  <p>돔돔이</p>
+                </div>
+                <div class="col-sm-4 text-center">
+                  <img src="./image/dongri.png" alt="동글이" class="w-75">
+                  <p>동글이</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Map -->
+    <script>
+      function myMap() {
+        var mapCanvas = document.getElementById("heroesPark");
+        var myCenter = new google.maps.LatLng(37.498182,126.866976);
+        var mapOptions = {
+  	       center: myCenter,
+           zoom: 15
+         };
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+      }
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- AOS -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmGhHG0m6nuzgorNFoeklULFVdVCOjUjQ&callback=myMap"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+  </body>
+</html>

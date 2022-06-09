@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KBOSTAT - 두산 베어스</title>
+    <!-- jquery -->
+  	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      body{
+        background-color: black;
+        color: white;
+      }
+      .mt-6{
+        margin-top: 80px;
+      }
+      .bgimg{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <!-- NavBar -->
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark flex-column" style="background-color: black;">
+        <div class="container">
+          <a class="navbar-brand" href="../main.html">KBOINFO</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  구단
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown" style="background-color: black;">
+                  <li><a class="dropdown-item" href="wizinfo.html">KT</a></li>
+                  <li><a class="dropdown-item active" href="bearsinfo.html">두산</a></li>
+                  <li><a class="dropdown-item" href="lionsinfo.html">삼성</a></li>
+                  <li><a class="dropdown-item" href="twinsinfo.html">LG</a></li>
+                  <li><a class="dropdown-item" href="heroesinfo.html">키움</a></li>
+                  <li><a class="dropdown-item" href="landersinfo.html">SSG</a></li>
+                  <li><a class="dropdown-item" href="dinosinfo.html">NC</a></li>
+                  <li><a class="dropdown-item" href="giantsinfo.html">롯데</a></li>
+                  <li><a class="dropdown-item" href="tigersinfo.html">KIA</a></li>
+                  <li><a class="dropdown-item" href="eaglesinfo.html">한화</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">전력비교</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+        <div class="container justify-content-center navbar-expand">
+          <ul class="navbar-nav mb-2">
+            <li class="nav-item mx-5"><a class="nav-link active" href="#">구단소개</a></li>
+            <li class="nav-item mx-5"><a class="nav-link" href="#">선수기록</a></li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Content -->
+      <div>
+        <!-- 팀 소개 -->
+        <div class="container mt-6">
+          <br><img class="float-end" src="./image/bearslogo.png" alt="teamlogo" style="display:inline-block; width:150px;">
+          <h1 style="color: #ED1C24;"><b>두산 베어스</b></h1>
+          <h3>&nbsp&nbsp TEAM DOOSAN! 2022</h3><br>
+          <p>서울특별시를 연고로 한 한국 프로 야구(KBO)의 원년구단</p>
+          <hr style="color: #ED1C24; height: 2px;">
+        </div>
+        <!-- 구장위치 -->
+        <div class="container text-end my-5" data-aos="fade-down" data-aos-duration="900">
+          <div class="bgimg p-4" style="background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('./image/jamsilStadium.jpg');">
+            <h2>야구장</h2><br>
+            <div class="row">
+              <div class="col-sm-8"></div>
+              <div class="col-sm-4">
+                <h4>홈구장</h4>
+                <p>서울특별시 송파구 잠실동<br>서울종합운동장 야구장</p>
+                <div id="bearsPark" style="width: 100%; height: 300px; display: inline-block"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 연혁 -->
+        <div class="container bgimg my-5" data-aos="fade-down" data-aos-duration="900">
+          <div class="bgimg p-4" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./image/jamsilStadium(2).jpg');">
+            <h2>연혁</h2><br>
+            <div class="row">
+              <div class="col-sm-6">
+                <p>1982년 충청도를 연고지로 한 OB 베어스 창단</p>
+                <p>1982년 전기리그 우승</p>
+                <p>1982년 한국시리즈 우승 (한국프로야구 원년 우승)</p>
+                <p>1985년 서울특별시로 연고지 변경 및 홈구장 동대문구장으로 변경</p>
+                <p>1985년 홈구장 잠실구장으로 변경</p>
+                <p>1986년 후기리그 우승</p>
+                <p>1986년 포스트시즌 진출</p>
+                <p>1987년 포스트시즌 진출</p>
+                <p>1993년 포스트시즌 진출</p>
+                <p>1995년 정규리그 1위 및 포스트시즌 진출</p>
+                <p>1995년 한국시리즈 우승</p>
+                <p>1998년 포스트시즌 진출</p>
+                <p>1999년 구단명 두산 베어스 변경</p>
+                <p>1999년 드림 매직리그 통합 우승</p>
+                <p>2001년 포스트시즌 진출</p>
+                <p>2001년 한국시리즈 우승</p>
+                <p>2004년 포스트시즌 진출</p>
+                <p>2005년 포스트시즌 진출</p>
+                <p>2005년 한국시리즈 준우승</p>
+                <p>2007년 포스트시즌 진출</p>
+                <p>2007년 한국시리즈 준우승</p>
+              </div>
+              <div class="col-sm-6">
+                <p>2008년 포스트시즌 진출</p>
+                <p>2008년 한국시리즈 준우승</p>
+                <p>2009년 포스트시즌 진출</p>
+                <p>2010년 포스트시즌 진출</p>
+                <p>2012년 포스트시즌 진출</p>
+                <p>2013년 포스트시즌 진출</p>
+                <p>2013년 한국시리즈 준우승</p>
+                <p>2015년 포스트시즌 진출</p>
+                <p>2015년 한국시리즈 우승</p>
+                <p>2016년 정규리그 1위 및 포스트시즌 진출</p>
+                <p>2016년 한국시리즈 우승</p>
+                <p>2017년 포스트시즌 진출</p>
+                <p>2018년 정규리그 1위 및 포스트시즌 진출</p>
+                <p>2018년 한국시리즈 준우승</p>
+                <p>2019년 정규리그 1위 및 포스트시즌 진출</p>
+                <p>2019년 한국시리즈 우승</p>
+                <p>2020년 포스트시즌 진출</p>
+                <p>2020년 한국시리즈 준우승</p>
+                <p>2021년 포스트시즌 진출</p>
+                <p>2021년 한국시리즈 준우승</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 우승 -->
+        <div class="container text-end bgimg my-5" data-aos="fade-down" data-aos-duration="900">
+          <div class="bgimg p-4" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./image/eaglesparklight.jpg');">
+            <h2>한국시리즈 우승</h2><br>
+            <h4>★★★★★★ 6회</h4><br>
+            <p>1982년, 1995년, 2001년, 2015년, 2016년, 2019년</p>
+          </div>
+        </div>
+        <!-- 영구결번 -->
+        <div class="container bgimg my-5" data-aos="fade-down" data-aos-duration="900">
+          <div class="bgimg p-4" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./image/ballimg.jpg');">
+            <h2>영구결번</h2>
+            <div data-aos="fade-right" data-aos-offset="400" data-aos-easing="ease-in-sine">
+              <div class="row">
+                <div class="col-sm-6 text-center">
+                  <img src="./image/kimyeongshin.jpg" alt="김영신" class="rounded img-fluid">
+                  <P>54. 김영신</p>
+                </div>
+                <div class="col-sm-6 text-center">
+                  <img src="./image/parkcheolsun.png" alt="박철순" class="rounded img-fluid">
+                  <p>21. 박철순</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 마스코트 -->
+        <div class="container text-end bgimg my-5" data-aos="fade-down" data-aos-duration="900">
+          <div class="bgimg p-4" style="background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('./image/bearsplayers.jpg');">
+            <h2>마스코트</h2>
+            <div data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine">
+              <div class="text-center">
+                <img src="./image/cheolung.png" alt="철웅이" class="img-fluid">
+                <p>철웅이</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Map -->
+    <script>
+      function myMap() {
+        var mapCanvas = document.getElementById("bearsPark");
+        var myCenter = new google.maps.LatLng(37.512258,127.071901);
+        var mapOptions = {
+           center: myCenter,
+           zoom: 15
+         };
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+      }
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- AOS -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmGhHG0m6nuzgorNFoeklULFVdVCOjUjQ&callback=myMap"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+  </body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KBOSTAT - 롯데 자이언츠</title>
+    <!-- jquery -->
+  	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      body{
+        background-color: black;
+        color: white;
+      }
+      .mt-6{
+        margin-top: 80px;
+      }
+      .bgimg{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <!-- NavBar -->
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark flex-column" style="background-color: black;">
+        <div class="container">
+          <a class="navbar-brand" href="../main.html">KBOINFO</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  구단
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown" style="background-color: black;">
+                  <li><a class="dropdown-item" href="wizinfo.html">KT</a></li>
+                  <li><a class="dropdown-item" href="bearsinfo.html">두산</a></li>
+                  <li><a class="dropdown-item" href="lionsinfo.html">삼성</a></li>
+                  <li><a class="dropdown-item" href="twinsinfo.html">LG</a></li>
+                  <li><a class="dropdown-item" href="heroesinfo.html">키움</a></li>
+                  <li><a class="dropdown-item" href="landersinfo.html">SSG</a></li>
+                  <li><a class="dropdown-item" href="dinosinfo.html">NC</a></li>
+                  <li><a class="dropdown-item active" href="giantsinfo.html">롯데</a></li>
+                  <li><a class="dropdown-item" href="tigersinfo.html">KIA</a></li>
+                  <li><a class="dropdown-item" href="eaglesinfo.html">한화</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">전력비교</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+        <div class="container justify-content-center navbar-expand">
+          <ul class="navbar-nav mb-2">
+            <li class="nav-item mx-5"><a class="nav-link active" href="#">구단소개</a></li>
+            <li class="nav-item mx-5"><a class="nav-link" href="#">선수기록</a></li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Content -->
+      <div>
+        <!-- 팀 소개 -->
+        <div class="container mt-6">
+          <br><img class="float-end" src="./image/giantslogo.png" alt="teamlogo" style="display:inline-block; width:200px;">
+          <h1 style="color: rgb(0, 41, 85);"><b>롯데 자이언츠</b></h1>
+          <h3>&nbsp&nbsp Win the Moment</h3><br>
+          <p>부산광역시를 연고로 한 한국 프로 야구(KBO)의 원년구단</p>
+          <hr style="color: rgb(0, 41, 85); height: 2px;">
+        </div>
+        <!-- 구장위치 -->
+        <div class="container text-end my-5" data-aos="fade-down" data-aos-duration="900">
+          <div class="bgimg p-4" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./image/giantspark.jpg');">
+            <h2>야구장</h2><br>
+            <div class="row">
+              <div class="col-sm-4"></div>
+              <div class="col-sm-4">
+                <h4>홈구장</h4>
+                <p>부산광역시 동래구 사직동<br>사직 야구장</p>
+                <div id="giantsPark" style="width: 100%; height: 300px; display: inline-block"></div>
+              </div>
+              <div class="col-sm-4">
+                <h4>제2구장</h4>
+                <p>울산광역시 남구 옥동<br>울산 문수 야구장</p>
+                <div id="ulsanPark" style="width: 100%; height: 300px; display: inline-block"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 연혁 -->
+        <div class="container bgimg my-5" data-aos="fade-down" data-aos-duration="900">
+          <div class="bgimg p-4" style="background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('./image/giantsfans.jpg');">
+            <h2>연혁</h2><br>
+            <p>1972년 롯데 자이언트 창단</p>
+            <p>1982년 구단명 롯데 자이언츠 변경 및 프로화</p>
+            <p>1984년 후기리그 우승</p>
+            <p>1984년 한국시리즈 우승</p>
+            <p>1985년 삼성 라이온즈의 전·후기 리그 통합 우승에 따른 시즌 준우승</p>
+            <p>1986년 홈구장 사직 야구장으로 변경</p>
+            <p>1991년 포스트시즌 진출</p>
+            <p>1992년 포스트시즌 진출</p>
+            <p>1992년 한국시리즈 우승</p>
+            <p>1995년 포스트시즌 진출</p>
+            <p>1995년 한국시리즈 준우승</p>
+            <p>1999년 포스트시즌 진출</p>
+            <p>1999년 한국시리즈 준우승</p>
+            <p>2000년 포스트시즌 진출</p>
+            <p>2008년 포스트시즌 진출</p>
+            <p>2009년 포스트시즌 진출</p>
+            <p>2010년 포스트시즌 진출</p>
+            <p>2011년 제2구장 마산 야구장 NC 다이노스에 인계</p>
+            <p>2011년 포스트시즌 진출</p>
+            <p>2012년 포스트시즌 진출</p>
+            <p>2014년 울산 문수 야구장 제2구장 재지정</p>
+            <p>2017년 포스트시즌 진출</p>
+          </div>
+        </div>
+        <!-- 우승 -->
+        <div class="container text-end bgimg my-5" data-aos="fade-down" data-aos-duration="900">
+          <div class="bgimg p-4" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./image/eaglesparklight.jpg');">
+            <h2>한국시리즈 우승</h2><br>
+            <h4>★★ 2회</h4><br>
+            <p>1984년, 1992년</p>
+          </div>
+        </div>
+        <!-- 영구결번 -->
+        <div class="container bgimg my-5" data-aos="fade-down" data-aos-duration="900">
+          <div class="bgimg p-4" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./image/ballimg.jpg');">
+            <h2>영구결번</h2>
+            <div data-aos="fade-right" data-aos-offset="400" data-aos-easing="ease-in-sine">
+              <div class="text-center">
+                <img src="./image/choidongwon.png" alt="최동원" class="img-fluid">
+                <p>11. 최동원</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 마스코트 -->
+        <div class="container text-end bgimg my-5" data-aos="fade-down" data-aos-duration="900">
+          <div class="bgimg p-4" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./image/giantsplayers.jpg');">
+            <h2>마스코트</h2>
+            <div data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine">
+              <div class="row">
+                <div class="col-sm-4 text-center">
+                  <img src="./image/nuri.png" alt="누리" class="w-75">
+                  <p>누리</p>
+                </div>
+                <div class="col-sm-4 text-center">
+                  <img src="./image/ara.png" alt="아라" class="w-75">
+                  <p>아라</p>
+                </div>
+                <div class="col-sm-4 text-center">
+                  <img src="./image/fini.png" alt="피니" class="w-75">
+                  <p>피니</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Map -->
+    <script>
+      function myMap() {
+        var mapCanvas = document.getElementById("giantsPark");
+        var myCenter = new google.maps.LatLng(35.194032,129.061518);
+        var mapOptions = {
+  	       center: myCenter,
+           zoom: 15
+         };
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+
+        var mapCanvas = document.getElementById("ulsanPark");
+        var myCenter = new google.maps.LatLng(35.532168,129.265575);
+        var mapOptions = {
+           center: myCenter,
+           zoom: 15
+         };
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+      }
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- AOS -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmGhHG0m6nuzgorNFoeklULFVdVCOjUjQ&callback=myMap"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+  </body>
+</html>
