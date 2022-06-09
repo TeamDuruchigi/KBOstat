@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../../back/css/strike_zone_each.css">
+
+    <!-- Bootstrap CSS -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
     <style>
-        #team_sel_list{
-            width: 1208px;
-            background-color: darkslateblue;
-            display: inline-block;
-            position: absolute;
-            top: 0px;
-            left: 0px;
+        body {
+            background: white;
         }
         .player_list_div{
             width: 400px;
@@ -19,8 +20,8 @@
             background-color: #880088;
             float: left;
             z-index: 1;
-            border: 1px solid white;
-
+            border: 1px solid rgb(240, 240, 240);
+            text-align: center;
         }
         .player_list_hover:hover::after{
             content: "";
@@ -35,17 +36,22 @@
             background-color: #003300;
             z-index: 1;
         }
-
+        .mt-6{
+            margin-top: 80px;
+        }
         #chose_player_stat{
             position: absolute;
             width: 1200px;
             height: 500px;
-            left: 0px;
-            top: 0px;
+            left: 360px;
+            top: 20%;
             background-color: white;
             z-index: 2;
         }
-
+        .player_list_hover{
+            margin: 0px;
+            padding: 0px;
+        }
     </style>
 </head>
 <body>
@@ -53,76 +59,124 @@
 <script src="../../back/js/player_data.js"></script>
 <script src="../../back/js/player_select_each.js"></script>
 
+<!-- NavBar -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark flex-column" style="background-color: black;">
+    <div class="container">
+        <a class="navbar-brand" href="../../main.html">KBOINFO</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        구단
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown" style="background-color: black;">
+                        <li><a class="dropdown-item" href="../../front/wizinfo.html">KT</a></li>
+                        <li><a class="dropdown-item" href="../../front/bearsinfo.html">두산</a></li>
+                        <li><a class="dropdown-item" href="../../front/lionsinfo.html">삼성</a></li>
+                        <li><a class="dropdown-item" href="../../front/twinsinfo.html">LG</a></li>
+                        <li><a class="dropdown-item" href="../../front/heroesinfo.html">키움</a></li>
+                        <li><a class="dropdown-item" href="../../front/landersinfo.html">SSG</a></li>
+                        <li><a class="dropdown-item" href="../../front/dinosinfo.html">NC</a></li>
+                        <li><a class="dropdown-item" href="../../front/giantsinfo.html">롯데</a></li>
+                        <li><a class="dropdown-item" href="../../front/tigersinfo.html">KIA</a></li>
+                        <li><a class="dropdown-item active" href="../../front/eaglesinfo.html">한화</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">전력비교</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="container justify-content-center navbar-expand">
+        <ul class="navbar-nav mb-2">
+            <li class="nav-item mx-5"><a class="nav-link" href="../../front/eaglesinfo.html">구단소개</a></li>
+            <li class="nav-item mx-5"><a class="nav-link active" href="">선수기록</a></li>
+        </ul>
+    </div>
+</nav>
 
-<div id="team_sel_list">
-    <script>
-        let cnt_three = 0;
-        for(let i =0; i<player_data.length; i++)
-        {
+<div>
+  <div class="container mt-6">
+      <script>
+          let cnt_three = 0;
+          for(let i =0; i<player_data.length; i++)
+          {
 
-            if(player_data[i][0] == "한화")
-            {
-                document.write("<div class='player_list_div' id='"+i+"_player' onclick ='now_player_stat(this.id); strike_zone_each_team(this.id); player_select_each(this.id); player_position_graph(this.id);'>" +
-                    "<img class='player_list_hover' src=../../"+player_data[i][3]+" style='width : 400px; height : 480px; background-color: #005555;'>" +
-                    "<h2 style='color: white;'>"+player_data[i][1]+"</h2>"+
-                    "<h3 style='color: white;'>"+player_data[i][2]+"</h3></div>");
-                var ith_player_style = document.getElementById(i+'_player').style;
-                cnt_three++;
-                if(cnt_three == 3)
-                {
-                    document.write("</br></br>");
-                    cnt_three = 0;
-                }
+              if(player_data[i][0] == "한화")
+              {
+                  document.write("<div class='player_list_div' id='"+i+"_player' onclick ='now_player_stat(this.id); strike_zone_each_team(this.id); player_select_each(this.id); player_position_graph(this.id);'>" +
+                      "<div style='width: 398px; height: 456px; background-color: white'>" +
+                      "<img class='player_list_hover' src=../../"+player_data[i][3]+" style='width : 380px; height : 456px; background-color: white;'>" +
+                      "</div>"+
+                      "<br><h2 class='d-inline display-5 fw-bold me-3' style='color: rgb(200, 200, 200);'>"+player_data[i][1]+"</h2>"+
+                      "<h3 class='d-inline fs-2' style='color: white;'>"+player_data[i][2]+"</h3></div>");
+                  var ith_player_style = document.getElementById(i+'_player').style;
+                  cnt_three++;
+                  if(cnt_three == 3)
+                  {
+                      document.write("</br></br>");
+                      cnt_three = 0;
+                  }
 
-                ith_player_style.content = "";
-                ith_player_style.opacity = '1';
-                ith_player_style.position = 'relative';
-                ith_player_style.width = '400px';
-                ith_player_style.height = '600px';
-                ith_player_style.top = '0px';
-                ith_player_style.left = '0px';
-                ith_player_style.right = '0px';
-                ith_player_style.bottom = '0px';
-                ith_player_style.backgroundColor = '0xff00ff';
-                ith_player_style.zIndex = '1';
+                  ith_player_style.content = "";
+                  ith_player_style.opacity = '1';
+                  ith_player_style.position = 'relative';
+                  ith_player_style.width = '400px';
+                  ith_player_style.height = '600px';
+                  ith_player_style.top = '0px';
+                  ith_player_style.left = '0px';
+                  ith_player_style.right = '0px';
+                  ith_player_style.bottom = '0px';
+                  ith_player_style.backgroundColor = '#ff6600';
+                  ith_player_style.zIndex = '1';
 
-            }
-        }
-    </script>
+              }
+          }
+      </script>
 
+  </div>
+
+  <div class="border border-warning border-3 rounded" id="chose_player_stat" style="display: none; position: fixed;">
+
+      <h1 id="player_name">a</h1>
+      <div style="background-color: red; width: 300px; height: 300px;">
+          <img id="player_image"  width = "500px" height = "500px"  alt=sorry src="">
+      </div>
+      <div width="300px" height="300px" style="display: inline-block; position: absolute; left: 350px; bottom: 300px;" id="radar_stat">
+          <!--            <p id = "data1" style="position: relative; left: 147px; bottom: 240px; display: inline;">타율</p>-->
+          <!--            <p id = "data2" style="position: relative; left: -25px; bottom: 150px; display: inline;">도루</p>-->
+          <!--            <p id = "data3" style="position: relative; left: -5px; bottom: 0px; display: inline;">타점</p>-->
+          <!--            <p id = "data4" style="position: relative; left: 110px; bottom: 0px; display: inline;">홈런</p>-->
+          <!--            <p id = "data5" style="position: relative; left: 130px; bottom: 150px; display: inline;">안타</p>-->
+          <p id = "data1" style="position: relative; left: 147px; bottom: 85px; display: inline;">ㅤㅤ</p>
+          <p id = "data2" style="position: relative; left: -25px; bottom: 0px; display: inline;">ㅤㅤ</p>
+          <p id = "data3" style="position: relative; left: -5px; bottom: -150px; display: inline;">ㅤㅤ</p>
+          <p id = "data4" style="position: relative; left: 110px; bottom: -150px; display: inline;">ㅤㅤ</p>
+          <p id = "data5" style="position: relative; left: 130px; bottom: 0px; display: inline;">ㅤㅤ</p>
+          <script src="../../back/js/player_radar_value_each.js"></script>
+
+          <canvas id = "threejs" width="250px" height="250px" style="display: inline-block; position: relative; top:160px; left: -150px;"></canvas>
+      </div>
+      <p id="player_profile"style="display: inline-block; position: relative; left: 0px; top: 0px;"></p>
+      <p id="player_position"style="display: inline-block; position: relative; left: 0px; top: 0px;"></p>
+      <div id="strike_zone">
+      </div>
+      <div id="close_stat" onclick="back_player_list()">
+          <p style="position: absolute; right: 30px; top: 0px;">X</p>
+      </div>
+  </div>
 </div>
 
-<div id="chose_player_stat" style="display: none; position: fixed;">
-
-    <h1 id="player_name">a</h1>
-    <div style="background-color: red; width: 300px; height: 300px;">
-        <img id="player_image"  width = "500px" height = "500px"  alt=sorry src="">
-    </div>
-    <div width="300px" height="300px" style="display: inline-block; position: absolute; left: 350px; bottom: 300px;" id="radar_stat">
-        <!--            <p id = "data1" style="position: relative; left: 147px; bottom: 240px; display: inline;">타율</p>-->
-        <!--            <p id = "data2" style="position: relative; left: -25px; bottom: 150px; display: inline;">도루</p>-->
-        <!--            <p id = "data3" style="position: relative; left: -5px; bottom: 0px; display: inline;">타점</p>-->
-        <!--            <p id = "data4" style="position: relative; left: 110px; bottom: 0px; display: inline;">홈런</p>-->
-        <!--            <p id = "data5" style="position: relative; left: 130px; bottom: 150px; display: inline;">안타</p>-->
-        <p id = "data1" style="position: relative; left: 147px; bottom: 85px; display: inline;">ㅤㅤ</p>
-        <p id = "data2" style="position: relative; left: -25px; bottom: 0px; display: inline;">ㅤㅤ</p>
-        <p id = "data3" style="position: relative; left: -5px; bottom: -150px; display: inline;">ㅤㅤ</p>
-        <p id = "data4" style="position: relative; left: 110px; bottom: -150px; display: inline;">ㅤㅤ</p>
-        <p id = "data5" style="position: relative; left: 130px; bottom: 0px; display: inline;">ㅤㅤ</p>
-        <script src="../../back/js/player_radar_value_each.js"></script>
-
-        <canvas id = "threejs" width="250px" height="250px" style="display: inline-block; position: relative; top:160px; left: -150px;"></canvas>
-    </div>
-    <p id="player_profile"style="display: inline-block; position: relative; left: 0px; top: 0px;"></p>
-    <p id="player_position"style="display: inline-block; position: relative; left: 0px; top: 0px;"></p>
-    <div id="strike_zone">
-    </div>
-    <div id="close_stat" onclick="back_player_list()">
-        <p style="position: absolute; right: 30px; top: 0px;">X</p>
-    </div>
-</div>
-
-
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 <script src="../../back/js/graph_each_team.js"></script>
 <script src="../../back/js/strike_zone_each_team.js"></script>
