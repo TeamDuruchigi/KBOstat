@@ -42,6 +42,28 @@
                     </script>
                 </select>
             </form>
+            <form>
+                <select name="show_by_team" id="show_by_team">
+                    <option name="Only_Dusan" value="Dusan">두산</option>
+                    <option name="Only_Hanwha" value="Hanwha">한화</option>
+                    <option name="Only_KIA" value="KIA">기아</option>
+                    <option name="Only_Kiwoom" value="Kiwoom">키움</option>
+                    <option name="Only_KT" value="KT">KT</option>
+                    <option name="Only_LG" value="LG">LG</option>
+                    <option name="Only_Lotte" value="Lotte">롯데</option>
+                    <option name="Only_NC" value="NC">NC</option>
+                    <option name="Only_Samsung" value="Samsung">삼성</option>
+                    <option name="Only_SSG" value="SSG">SSG</option>
+                </select>
+                <select name="defense_position" id="defense_position">
+                    <option name="Pitcher" value="P">투수</option>
+                    <option name="Catcher" value="C">포수</option>
+                    <option name="OutFielder" value="OF">외야수</option>
+                    <option name="InFielder" value="IF">내야수</option>
+                </select>
+                <
+            </form>
+
             <button type='button' onclick='display_second_select(); second_player_label_change(); second_player_select_change(); ' value='두 번째 선수 불러오기'>두 번째 선수 불러오기</button>
             <form id='now_select_second' style="display: none">
                 <label id='label_for_players_second' for='select_players_second' >Choose in all player</label></br>
