@@ -30,9 +30,9 @@
         <div id="player_sel_input">
             <form id="now_select">
                 <label id='label_for_players_first' for="select_players_first" >Choose in all player</label></br>
-                <select name ="select_players" id='select_players_first' onchange='if_select_first(); first_player_select(); player_position_graph()'>
-                    <option name = 'select_player'  value=''>test_zero_select</option>
+                <select name ="select_players" id='select_players_first' onchange='if_select_first(); first_player_select(); player_position_graph();'>
                     <script>
+                        document.write("<option name = 'select_player'  value=''>test_zero_select</option>");
                         let arr_length_first = 1;
                         for(let i = 0; i <player_data.length; i++)
                         {
@@ -42,29 +42,179 @@
                     </script>
                 </select>
             </form>
-            <form>
-                <select name="show_by_team" id="show_by_team">
-                    <option name="Only_Dusan" value="Dusan">두산</option>
-                    <option name="Only_Hanwha" value="Hanwha">한화</option>
-                    <option name="Only_KIA" value="KIA">기아</option>
-                    <option name="Only_Kiwoom" value="Kiwoom">키움</option>
-                    <option name="Only_KT" value="KT">KT</option>
-                    <option name="Only_LG" value="LG">LG</option>
-                    <option name="Only_Lotte" value="Lotte">롯데</option>
-                    <option name="Only_NC" value="NC">NC</option>
-                    <option name="Only_Samsung" value="Samsung">삼성</option>
-                    <option name="Only_SSG" value="SSG">SSG</option>
-                </select>
-                <select name="defense_position" id="defense_position">
-                    <option name="Pitcher" value="P">투수</option>
-                    <option name="Catcher" value="C">포수</option>
-                    <option name="OutFielder" value="OF">외야수</option>
-                    <option name="InFielder" value="IF">내야수</option>
-                </select>
-                <
-            </form>
+            <label id="label_for_detail_search" for="detail_search">상세 검색</label>
+            <input id="detail_search" name="detail_search" type="checkbox" value="on" onclick="display_detail_find()"></br>
+            <div id="search_player_list_detail" style="display: none">
+                <form>
+                    <label id="label_for_Find_player_by_team" for="Find_player_by_team" onchange="detail_player_list();">팀 별로 보기</label></br>
+                    <select name="Find_player_by_team" id="Find_player_by_team" onchange="">
+                        <option name="Find_player_by_team" value="0">default</option>
+                        <option name="Find_player_by_team" value="두산">두산</option>
+                        <option name="Find_player_by_team" value="한화">한화</option>
+                        <option name="Find_player_by_team" value="KIA">KIA</option>
+                        <option name="Find_player_by_team" value="키움">키움</option>
+                        <option name="Find_player_by_team" value="KT">KT</option>
+                        <option name="Find_player_by_team" value="LG">LG</option>
+                        <option name="Find_player_by_team" value="롯데">롯데</option>
+                        <option name="Find_player_by_team" value="NC">롯데</option>
+                        <option name="Find_player_by_team" value="삼성">삼성</option>
+                        <option name="Find_player_by_team" value="SSG">SSG</option>
+                    </select></br>
+                    <label id="label_for_Find_player_by_position" for="Find_player_by_position">포지션 별로 보기</label></br>
+                    <select name="Find_player_by_position" id="Find_player_by_position">
+                        <option name="Find_player_by_position" value="0">default</option>
+                        <option name="Find_player_by_position" value="1B">1루수</option>
+                        <option name="Find_player_by_position" value="2B">2루수</option>
+                        <option name="Find_player_by_position" value="3B">3루수</option>
+                        <option name="Find_player_by_position" value="CF">증견수</option>
+                        <option name="Find_player_by_position" value="DH">지명타자</option>
+                        <option name="Find_player_by_position" value="LF">좌익수</option>
+                        <option name="Find_player_by_position" value="RF">우익수</option>
+                        <option name="Find_player_by_position" value="SS">유격수</option>
+                        <option name="Find_player_by_position" value="C">포수</option>
+                        <option name="Find_player_by_position" value="P">투수</option>
+                    </select></br>
+                    <label id="label_for_Find_player_by_throw_hand" for="Find_player_by_throw_hand">투구 시 주 손 별로 보기</label></br>
+                    <select name="Find_player_by_throw_hand" id="Find_player_by_throw_hand">
+                        <option name="Find_player_by_throw_hand" value="0">default</option>
+                        <option name="Find_player_by_throw_hand" value="우">오른손</option>
+                        <option name="Find_player_by_throw_hand" value="좌">왼손</option>
+                    </select></br>
+                    <label id="label_for_Find_player_by_throw_style" for="Find_player_by_throw_style">투구 폼 별로 보기</label></br>
+                    <select name="Find_player_by_throw_style" id="Find_player_by_throw_style">
+                        <option name="Find_player_by_throw_style" value="0">default</option>
+                        <option name="Find_player_by_throw_style" value="언">언더</option>
+                        <option name="Find_player_by_throw_style" value="투">기본</option>
+                    </select></br>
+                    <label id="label_for_Find_player_by_hit_hand" for="Find_player_by_hit_hand">타구시 주 손 별로 보기</label></br>
+                    <select name="Find_player_by_hit_hand" id="Find_player_by_hit_hand">
+                        <option name="Find_player_by_hit_hand" value="0">default</option>
+                        <option name="Find_player_by_hit_hand" value="우">오른손</option>
+                        <option name="Find_player_by_hit_hand" value="좌">왼손</option>
+                        <option name="Find_player_by_hit_hand" value="양">양손</option>
+                    </select></br>
+                </form>
+            </div>
+            <script>
+                function detail_player_list()
+                {
+                    var arr;
+                    arr = "<option name = 'select_player'  value=''>test_zero_select</option>";
+                    var player_list_team = document.getElementById('Find_player_by_team').value;
+                    var player_list_position = document.getElementById('Find_player_by_position').value;
+                    var player_list_throw_hand = document.getElementById('Find_player_by_throw_hand').value;
+                    var player_list_throw_style = document.getElementById('Find_player_by_throw_style').value;
+                    var player_list_hit_hand = document.getElementById('Find_player_by_hit_hand').value;
 
-            <button type='button' onclick='display_second_select(); second_player_label_change(); second_player_select_change(); ' value='두 번째 선수 불러오기'>두 번째 선수 불러오기</button>
+                    alert(player_list_team);
+
+                    let arr_length_first = 1;
+                    for(let i = 0; i <player_data.length; i++) {
+                        var check_value = 0;
+                        var player_play_style = player_data[i][12].split('');
+                        while (1)
+                        {
+                            //팀
+                            if(player_list_team == 0)
+                            {
+                                check_value++;
+                            }
+                            else if(player_list_team == player_data[i][0])
+                            {
+                                check_value++;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                            //포지션
+                            if(player_list_position == 0)
+                            {
+                                check_value++;
+                            }
+                            else if(player_list_position == player_data[i][5])
+                            {
+                                check_value++;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                            //투구 주손
+                            if(player_list_throw_hand == 0)
+                            {
+                                check_value++;
+                            }
+                            else if(player_list_throw_hand == player_play_style[0])
+                            {
+                                check_value++;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                            // 투구 폼
+                            if(player_list_throw_style == 0)
+                            {
+                                check_value++;
+                            }
+                            else if(player_list_throw_style == player_play_style[1])
+                            {
+                                check_value++;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                            // 타구 손
+                            if(player_list_hit_hand == 0)
+                            {
+                                check_value++;
+                            }
+                            else if(player_list_hit_hand == player_play_style[2])
+                            {
+                                check_value++;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                            if(check_value == 4)
+                            {
+                                arr += "<option name = 'select_player'  value='"+i+ "_" +player_data[i][0]+"_"+player_data[i][1]+"_"+player_data[i][2]+"'>"+arr_length_first+". "+player_data[i][0]+" "+player_data[i][1]+"번 "+player_data[i][2]+"</option>";
+                                arr_length_first++;
+                                break;
+                            }
+                            else
+                            {
+                                alert("error");
+                                break;
+                            }
+                        }
+
+
+
+                    }
+
+                    document.getElementById('select_players_first').innerHTML = arr;
+                }
+            </script>
+            <script>
+                function display_detail_find(){
+                    if( document.getElementById('detail_search').checked === true )
+                    {
+                        document.getElementById('search_player_list_detail').style.display='block';
+                    }
+                    else if( document.getElementById('detail_search').checked === false)
+                    {
+                        document.getElementById('search_player_list_detail').style.display='none';
+                    }
+                }
+            </script>
+
+            <label id="label_for_call_second_player_selection" for="call_second_player_selection">두 번째 선수 불러오기</label>
+            <input id="call_second_player_selection" name="detail_search" type="checkbox" value="on" onclick="display_second_select(); second_player_label_change(); second_player_select_change();"></br>
+
             <form id='now_select_second' style="display: none">
                 <label id='label_for_players_second' for='select_players_second' >Choose in all player</label></br>
                 <script>
@@ -77,54 +227,61 @@
                 </script>
                 <select name ='select_players' id='select_players_second' onchange='if_select_second(); second_player_select();'>
                     <option name = 'select_player'  value='0'>test_zero_select</option>"
-<!--                    <script>-->
-<!--                        let arr_length_second = 1;-->
-<!--                        for(let i = 0; i <player_data.length; i++) {-->
-<!--                        document.write("<option name = 'select_player'  value='" + i + "_" + player_data[i][0] + "_" + player_data[i][1] + "_" + player_data[i][2] + "'>" + arr_length_second + ". " + player_data[i][0] + " " + player_data[i][1] + "번 " + player_data[i][2] + "</option>");-->
-<!--                        arr_length_second++;-->
-<!--                    }-->
-<!--                    </script>-->
+                    <!--                    <script>-->
+                    <!--                        let arr_length_second = 1;-->
+                    <!--                        for(let i = 0; i <player_data.length; i++) {-->
+                    <!--                        document.write("<option name = 'select_player'  value='" + i + "_" + player_data[i][0] + "_" + player_data[i][1] + "_" + player_data[i][2] + "'>" + arr_length_second + ". " + player_data[i][0] + " " + player_data[i][1] + "번 " + player_data[i][2] + "</option>");-->
+                    <!--                        arr_length_second++;-->
+                    <!--                    }-->
+                    <!--                    </script>-->
                     <script>
 
                         function second_player_select_change(){
                             var first_selected_player = document.getElementById('select_players_first').value.split('_');
                             var first_player_position = player_data[first_selected_player[0]][5];
                             let arr_length_second = 1;
-                            document.getElementById('select_players_second').innerHTML = "<option name = 'select_player'  value='0'>test_zero_select</option>";
+                            var arr = "<option name = 'select_player'  value='0'>test_zero_select</option>";
                             for(let i = 0; i <player_data.length; i++)
                             {
                                 if(player_data[i][5] == first_player_position)
                                 {
-                                    document.getElementById('select_players_second').innerHTML += "<option name = 'select_player'  value='" + i + "_" + player_data[i][0] + "_" + player_data[i][1] + "_" + player_data[i][2] + "'>" + arr_length_second + ". " + player_data[i][0] + " " + player_data[i][1] + "번 " + player_data[i][2] + "</option>";
+                                    arr += "<option name = 'select_player'  value='" + i + "_" + player_data[i][0] + "_" + player_data[i][1] + "_" + player_data[i][2] + "'>" + arr_length_second + ". " + player_data[i][0] + " " + player_data[i][1] + "번 " + player_data[i][2] + "</option>";
                                     arr_length_second++;
                                 }
                             }
+                            document.getElementById('select_players_second').innerHTML = arr;
                         }
                     </script>
                 </select>
             </form>
             <script>
-
-            function display_second_select(){
-                document.getElementById('now_select_second').style.display = 'block';
-            }
+                function display_second_select(){
+                    if( document.getElementById('call_second_player_selection').checked === true )
+                    {
+                        document.getElementById('now_select_second').style.display='block';
+                    }
+                    else if( document.getElementById('call_second_player_selection').checked === false)
+                    {
+                        document.getElementById('now_select_second').style.display='none';
+                    }
+                }
             </script>
         </div>
-            <script>
+        <script>
 
-            </script>
+        </script>
     </div>
     <div id = "content">
         <h1 id="player_name">a</h1>
         <div style="background-color: red; width: 300px; height: 300px;">
-            <img id="player_image" alt=sorry>
+            <img id="player_image"  width = "500px" height = "500px"  alt=sorry>
         </div>
         <div width="300px" height="300px" style="display: inline-block; position: relative; left: 350px; bottom: 300px;" id="radar_stat">
-<!--            <p id = "data1" style="position: relative; left: 147px; bottom: 240px; display: inline;">타율</p>-->
-<!--            <p id = "data2" style="position: relative; left: -25px; bottom: 150px; display: inline;">도루</p>-->
-<!--            <p id = "data3" style="position: relative; left: -5px; bottom: 0px; display: inline;">타점</p>-->
-<!--            <p id = "data4" style="position: relative; left: 110px; bottom: 0px; display: inline;">홈런</p>-->
-<!--            <p id = "data5" style="position: relative; left: 130px; bottom: 150px; display: inline;">안타</p>-->
+            <!--            <p id = "data1" style="position: relative; left: 147px; bottom: 240px; display: inline;">타율</p>-->
+            <!--            <p id = "data2" style="position: relative; left: -25px; bottom: 150px; display: inline;">도루</p>-->
+            <!--            <p id = "data3" style="position: relative; left: -5px; bottom: 0px; display: inline;">타점</p>-->
+            <!--            <p id = "data4" style="position: relative; left: 110px; bottom: 0px; display: inline;">홈런</p>-->
+            <!--            <p id = "data5" style="position: relative; left: 130px; bottom: 150px; display: inline;">안타</p>-->
             <p id = "data1" style="position: relative; left: 147px; bottom: 240px; display: inline;">ㅤㅤ</p>
             <p id = "data2" style="position: relative; left: -25px; bottom: 150px; display: inline;">ㅤㅤ</p>
             <p id = "data3" style="position: relative; left: -5px; bottom: 0px; display: inline;">ㅤㅤ</p>
