@@ -2,7 +2,7 @@ function if_select_first(){
     var selected_player = document.getElementById('select_players_first').value.split('_');
     document.getElementById("player_name").innerHTML = player_data[selected_player[0]][0] + " " + player_data[selected_player[0]][1] + "번 " + player_data[selected_player[0]][2];
     document.getElementById("player_image").src = player_data[selected_player[0]][3];
-    switch (player_data[searched_player[0]][0])
+    switch (player_data[selected_player[0]][0])
     {
         case "SSG":
             {
@@ -155,11 +155,12 @@ function if_select_first(){
     document.getElementById('player_profile').style.display = 'block';
     document.getElementById('player_stat').style.display = 'block';
 
-    document.getElementById("player_profile1").innerHTML = player_data[selected_player[0]][4];
+    document.getElementById("player_profile1").innerHTML = position;
     // document.getElementById("player_position").innerHTML = player_data[selected_player[0]][5];
-    document.getElementById("player_profile2").innerHTML = player_data[selected_player[0]][13];
-    document.getElementById("player_profile3").innerHTML = player_data[selected_player[0]][14];
-    document.getElementById("player_profile4").innerHTML = player_data[selected_player[0]][15];
+    document.getElementById("player_profile2").innerHTML = player_data[selected_player[0]][12];
+    document.getElementById("player_profile3").innerHTML = player_data[selected_player[0]][13];
+    document.getElementById("player_profile4").innerHTML = player_data[selected_player[0]][14];
+    document.getElementById("player_profile5").innerHTML = player_data[selected_player[0]][15];
 
     if( player_data[selected_player[0]][5] == "타자")
     {

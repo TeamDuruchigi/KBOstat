@@ -168,11 +168,12 @@ function if_select_by_search(input_name){
     document.getElementById('player_profile').style.display = 'block';
     document.getElementById('player_stat').style.display = 'block';
 
-    document.getElementById("player_profile1").innerHTML = player_data[searched_player][4];
+    document.getElementById("player_profile1").innerHTML = position;
     // document.getElementById("player_position").innerHTML = player_data[selected_player[0]][5];
-    document.getElementById("player_profile2").innerHTML = player_data[searched_player][13];
-    document.getElementById("player_profile3").innerHTML = player_data[searched_player][14];
-    document.getElementById("player_profile4").innerHTML = player_data[searched_player][15];
+    document.getElementById("player_profile2").innerHTML = player_data[searched_player][12];
+    document.getElementById("player_profile3").innerHTML = player_data[searched_player][13];
+    document.getElementById("player_profile4").innerHTML = player_data[searched_player][14];
+    document.getElementById("player_profile5").innerHTML = player_data[searched_player][15];
 
     if( player_data[searched_player][5] == "타자")
     {

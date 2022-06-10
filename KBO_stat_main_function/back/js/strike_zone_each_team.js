@@ -5,12 +5,66 @@ function strike_zone_each_team(num){
     document.getElementById("player_image").alt = player_data[selected_player[0]][0] + " " + player_data[selected_player[0]][1] + "번 " + player_data[selected_player[0]][2];
     document.getElementById('player_profile').style.display = 'block';
     document.getElementById('player_stat').style.display = 'block';
-
-    document.getElementById("player_profile1").innerHTML = player_data[selected_player[0]][4];
+    var position = player_data[selected_player[0]][4];
+    switch(position)
+    {
+        case "1B":
+        {
+            position = "1루수";
+            break;
+        }
+        case "2B":
+        {
+            position = "2루수";
+            break;
+        }
+        case "3B":
+        {
+            position = "3루수";
+            break;
+        }
+        case "LF":
+        {
+            position = "좌익수";
+            break;
+        }
+        case "CF":
+        {
+            position = "중견수";
+            break;
+        }
+        case "RF":
+        {
+            position = "우익수";
+            break;
+        }
+        case "SS":
+        {
+            position = "유격수";
+            break;
+        }
+        case "DH":
+        {
+            position = "지명타자";
+            break;
+        }
+        case "P":
+        {
+            position = "투수";
+            break;
+        }
+        case "C":
+        {
+            position = "포수";
+            break;
+        }
+    }
+    document.getElementById("player_profile1").innerHTML = position;
     // document.getElementById("player_position").innerHTML = player_data[selected_player[0]][5];
-    document.getElementById("player_profile2").innerHTML = player_data[selected_player[0]][13];
-    document.getElementById("player_profile3").innerHTML = player_data[selected_player[0]][14];
-    document.getElementById("player_profile4").innerHTML = player_data[selected_player[0]][15];
+    document.getElementById("player_profile2").innerHTML = player_data[selected_player[0]][12];
+    document.getElementById("player_profile3").innerHTML = player_data[selected_player[0]][13];
+    document.getElementById("player_profile4").innerHTML = player_data[selected_player[0]][14];
+    document.getElementById("player_profile5").innerHTML = player_data[selected_player[0]][15];
 
     if( player_data[selected_player[0]][5] == "타자")
     {
