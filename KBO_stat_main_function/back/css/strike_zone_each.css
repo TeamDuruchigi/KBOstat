@@ -1,11 +1,11 @@
 
 #strike_zone{
-    width: 310px;
-    height: 310px;
+    width: 280px;
+    height: 280px;
     display: inline-block;
     position: absolute;
-    top: 80px;
-    left: 750px;
+    top: 350px;
+    left: 780px;
     /*외부 사용시 필요 크기에 맞춰 이거만 수정하면 될꺼임*/
 }
 .strike_zone{
