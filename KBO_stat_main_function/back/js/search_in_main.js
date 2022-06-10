@@ -7,8 +7,7 @@ function search_player()
         {
             if (player_data[i]) {
                 if (player_data[i][2] == input_player) {
-                    window.open("test_div.html?" + input_player);
-                    document.getElementById('select_players_first').options[i].selected = true;
+                    window.open("test_div.html?" + input_player +"?"+ i);
                     return;
                 }
 

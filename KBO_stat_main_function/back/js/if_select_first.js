@@ -2,13 +2,7 @@ function if_select_first(){
     var selected_player = document.getElementById('select_players_first').value.split('_');
     document.getElementById("player_name").innerHTML = player_data[selected_player[0]][0] + " " + player_data[selected_player[0]][1] + "번 " + player_data[selected_player[0]][2];
     document.getElementById("player_image").src = player_data[selected_player[0]][3];
-    alert(document.getElementById('select_players_first').selected);
-    alert("4: "+ player_data[selected_player[0]][4]);
-    alert("5: "+ player_data[selected_player[0]][5]);
-    alert("13: "+ player_data[selected_player[0]][13]);
-    alert("14: "+ player_data[selected_player[0]][14]);
-    alert("15: "+ player_data[selected_player[0]][15]);
-    switch (player_data[selected_player[0]][0])
+    switch (player_data[searched_player[0]][0])
     {
         case "SSG":
             {

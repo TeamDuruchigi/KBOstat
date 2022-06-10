@@ -34,10 +34,17 @@
                     <script>
                         document.write("<option name = 'select_player'  value=''>test_zero_select</option>");
                         let arr_length_first = 1;
-                        for(let i = 0; i <player_data.length; i++)
+                        if(player_data)
                         {
-                            document.write("<option name = 'select_player'  value='"+i+ "_" +player_data[i][0]+"_"+player_data[i][1]+"_"+player_data[i][2]+"'>"+arr_length_first+". "+player_data[i][0]+" "+player_data[i][1]+"번 "+player_data[i][2]+"</option>");
-                            arr_length_first++;
+                            for(let i = 0; i <player_data.length; i++)
+                            {
+                                if(player_data[i])
+                                {
+                                    document.write("<option name = 'select_player'  value='"+i+ "_" +player_data[i][0]+"_"+player_data[i][1]+"_"+player_data[i][2]+"'>"+arr_length_first+". "+player_data[i][0]+" "+player_data[i][1]+"번 "+player_data[i][2]+"</option>");
+                                    arr_length_first++;
+                                }
+                            }
+
                         }
                     </script>
                 </select>
@@ -109,6 +116,9 @@
                 }
             </script>
 
+            <script src="back/js/if_select_by_search.js"></script>
+            <script src="back/js/searched_player_select.js"></script>
+            <script src="back/js/receive_from_main.js"></script>
             <label id="label_for_call_second_player_selection" for="call_second_player_selection">두 번째 선수 불러오기</label>
             <input id="call_second_player_selection" name="detail_search" type="checkbox" value="on" onclick="display_second_select(); second_player_label_change(); second_player_select_change();"></br>
 
@@ -367,6 +377,30 @@
         <script src="back/js/if_select_first.js"></script>
         <script src="back/js/if_select_second.js"></script>
 
+        <script>
+
+            if(received_player != "")
+            {
+                alert(1);
+                if(player_data)
+                {
+
+                    for(let i = 0; i < player_data.length; i++) {
+                        if (player_data[i])
+                        {
+
+                            if(player_data[i][2] == received_player)
+                            {
+
+                                document.getElementById('select_players_first').options[i+1].selected = true;
+                                if_select_by_search(received_player);
+                                searched_player_select(received_player);
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
 
     </div>
     <div id = "footer"></div>
@@ -374,10 +408,8 @@
 <script src="back/js/graph.js"></script>
 <script src="back/js/first_player_select.js"></script>
 <script src="back/js/second_player_select.js"></script>
-
 <script src="back/js/advanced_search.js"></script>
 <script src="back/js/advanced_search_second.js"></script>
-<script src="back/js/receive_from_main.js"></script>
 <script src="back/js/search_in_main.js"></script>
 </body>
 </html>
