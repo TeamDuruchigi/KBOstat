@@ -4,7 +4,7 @@ function player_position_graph(){
 
     if(first_player_position == "타자")
     {
-        document.getElementById('radar_stat').style.left = '350px';
+        document.getElementById('radar_stat').style.left = '650px';
         var data1 = document.getElementById('data1');
         var data2 = document.getElementById('data2');
         var data3 = document.getElementById('data3');
@@ -26,7 +26,7 @@ function player_position_graph(){
     }
     else if(first_player_position == "투수")
     {
-        document.getElementById('radar_stat').style.left = '286px';
+        document.getElementById('radar_stat').style.left = '586px';
         var data1 = document.getElementById('data1');
         var data2 = document.getElementById('data2');
         var data3 = document.getElementById('data3');

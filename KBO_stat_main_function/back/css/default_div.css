@@ -24,12 +24,13 @@ body{
 }
 #left_menu{
     position: relative;
-    width: 200px;
+    width: 220px;
     min-width: 200px;
-    height: calc(100% - 200px);
+    height: 100%;
     display: inline-block;
-    background-color: #555555;
+    background-color: #303030;
     float: inherit;
+    color: white;
 }
 #content{
     position: relative;

@@ -1,6 +1,6 @@
 function if_select_first(){
     var selected_player = document.getElementById('select_players_first').value.split('_');
-    document.getElementById("player_name").innerHTML = player_data[selected_player[0]][0] + " " + player_data[selected_player[0]][1] + "번 " + player_data[selected_player[0]][2];
+    document.getElementById("player_name").innerHTML = "<span class='display-6'>" + player_data[selected_player[0]][0] + " " + player_data[selected_player[0]][1] + "번</span><br><p style='font-size:46px'><b>&nbsp&nbsp" + player_data[selected_player[0]][2] + "</b></p>";
     document.getElementById("player_image").src = player_data[selected_player[0]][3];
     switch (player_data[selected_player[0]][0])
     {

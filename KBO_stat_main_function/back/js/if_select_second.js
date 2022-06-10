@@ -4,7 +4,7 @@ function if_select_second(){
 
     var selected_player = document.getElementById('select_players_second').value.split('_');
     var player_name = document.getElementById("player_name_second");
-    player_name.innerHTML = player_data[selected_player[0]][0] + " " + player_data[selected_player[0]][1] + "번 " + player_data[selected_player[0]][2];
+    player_name.innerHTML = "<span class='display-6'>" + player_data[selected_player[0]][0] + " " + player_data[selected_player[0]][1] + "번</span><br><p style='font-size:46px'><b>&nbsp&nbsp" + player_data[selected_player[0]][2] + "</b></p>";
     player_name.style.display = "block";
 
     var player_image = document.getElementById("player_image_second");
@@ -106,9 +106,62 @@ function if_select_second(){
         default:
             break;
     }
-
-    document.getElementById('player_profile_second').style.display = 'block';
-    document.getElementById('player_stat_second').style.display = 'block';
+    var position = player_data[selected_player[0]][4];
+    switch(position)
+    {
+        case "1B":
+        {
+            position = "1루수";
+            break;
+        }
+        case "2B":
+        {
+            position = "2루수";
+            break;
+        }
+        case "3B":
+        {
+            position = "3루수";
+            break;
+        }
+        case "LF":
+        {
+            position = "좌익수";
+            break;
+        }
+        case "CF":
+        {
+            position = "중견수";
+            break;
+        }
+        case "RF":
+        {
+            position = "우익수";
+            break;
+        }
+        case "SS":
+        {
+            position = "유격수";
+            break;
+        }
+        case "DH":
+        {
+            position = "지명타자";
+            break;
+        }
+        case "P":
+        {
+            position = "투수";
+            break;
+        }
+        case "C":
+        {
+            position = "포수";
+            break;
+        }
+    }
+    document.getElementById('player_profile_second').style.display = 'inline-block';
+    document.getElementById('player_stat_second').style.display = 'inline-block';
 
     document.getElementById("player_profile1_second").innerHTML = position;
     // document.getElementById("player_position").innerHTML = player_data[selected_player[0]][5];

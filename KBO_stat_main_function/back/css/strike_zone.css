@@ -4,8 +4,8 @@
     height: 310px;
     display: inline-block;
     position: absolute;
-    top: 80px;
-    left: 800px;
+    top: 70px;
+    left: 1160px;
     /*외부 사용시 필요 크기에 맞춰 이거만 수정하면 될꺼임*/
 }
 .strike_zone{
