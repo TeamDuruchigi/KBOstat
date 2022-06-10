@@ -165,9 +165,54 @@
           <script src="../../back/js/player_radar_value_each.js"></script>
 
           <canvas id = "threejs" width="250px" height="250px" style="display: inline-block; position: relative; top:160px; left: -150px;"></canvas>
-      </div>
-      <p id="player_profile"style="display: inline-block; position: relative; left: 0px; top: 0px;"></p>
-      <p id="player_position"style="display: inline-block; position: relative; left: 0px; top: 0px;"></p>
+      </div>        <table id="player_profile" style="position: relative; top: -200px; display: none;">
+      <tr>
+          <th colspan="2">선수 정보</th>
+      </tr>
+      <tr>
+          <td>포지션</td>
+          <td id="player_profile1"></td>
+      </tr>
+      <tr>
+          <td>투타유형</td>
+          <td id="player_profile2"></td>
+      </tr>
+      <tr>
+          <td>생년월일</td>
+          <td id="player_profile3"></td>
+      </tr>
+      <tr>
+          <td>체격</td>
+          <td id="player_profile4"></td>
+      </tr>
+  </table>
+
+      <table id="player_stat" style="position: relative; top: -200px; display: none;">
+          <tr>
+              <th colspan="2">선수 스탯</th>
+          </tr>
+          <tr>
+              <td id="name_of_stat1"></td>
+              <td id="player_stat1"></td>
+          </tr>
+          <tr>
+              <td id="name_of_stat2"></td>
+              <td id="player_stat2"></td>
+          </tr>
+          <tr>
+              <td id="name_of_stat3"></td>
+              <td id="player_stat3"></td>
+          </tr>
+          <tr>
+              <td id="name_of_stat4"></td>
+              <td id="player_stat4"></td>
+          </tr>
+          <tr>
+              <td id="name_of_stat5"></td>
+              <td id="player_stat5"></td>
+          </tr>
+
+      </table>
       <div id="strike_zone">
       </div>
       <div id="close_stat" onclick="back_player_list()">

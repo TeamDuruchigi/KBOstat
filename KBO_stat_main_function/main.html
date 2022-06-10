@@ -37,6 +37,7 @@
         height: 100%;
       }
     </style>
+    <script src="back/js/if_select_first.js"></script>
   </head>
 
   <body>
@@ -84,8 +85,8 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
               <div class="input-group">
-                <input type="text" class="form-control">
-                <button class="btn btn-outline-light" type="button" id="button">Search</button>
+                <input type="text" class="form-control" id="search_player_input">
+                <button class="btn btn-outline-light" type="button" id="button" onclick="search_player();">Search</button>
               </div>
             </div>
             <div class="col-sm-3"></div>
@@ -125,5 +126,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmGhHG0m6nuzgorNFoeklULFVdVCOjUjQ&callback=myMap"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>AOS.init();</script>
+  <script src="back/js/search_in_main.js"></script>
+  <script src="back/js/player_data.js"></script>
   </body>
 </html>

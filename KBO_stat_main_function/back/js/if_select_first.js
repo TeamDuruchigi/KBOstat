@@ -2,6 +2,12 @@ function if_select_first(){
     var selected_player = document.getElementById('select_players_first').value.split('_');
     document.getElementById("player_name").innerHTML = player_data[selected_player[0]][0] + " " + player_data[selected_player[0]][1] + "번 " + player_data[selected_player[0]][2];
     document.getElementById("player_image").src = player_data[selected_player[0]][3];
+    alert(document.getElementById('select_players_first').selected);
+    alert("4: "+ player_data[selected_player[0]][4]);
+    alert("5: "+ player_data[selected_player[0]][5]);
+    alert("13: "+ player_data[selected_player[0]][13]);
+    alert("14: "+ player_data[selected_player[0]][14]);
+    alert("15: "+ player_data[selected_player[0]][15]);
     switch (player_data[selected_player[0]][0])
     {
         case "SSG":
@@ -97,8 +103,93 @@ function if_select_first(){
             break;
     }
     document.getElementById("player_image").alt = player_data[selected_player[0]][0] + " " + player_data[selected_player[0]][1] + "번 " + player_data[selected_player[0]][2];
-    document.getElementById("player_profile").innerHTML = player_data[selected_player[0]][4];
-    document.getElementById("player_position").innerHTML = player_data[selected_player[0]][5];
+
+    var position = player_data[selected_player[0]][4];
+    switch(position)
+    {
+        case "1B":
+        {
+            position = "1루수";
+            break;
+        }
+        case "2B":
+        {
+            position = "2루수";
+            break;
+        }
+        case "3B":
+        {
+            position = "3루수";
+            break;
+        }
+        case "LF":
+        {
+            position = "좌익수";
+            break;
+        }
+        case "CF":
+        {
+            position = "중견수";
+            break;
+        }
+        case "RF":
+        {
+            position = "우익수";
+            break;
+        }
+        case "SS":
+        {
+            position = "유격수";
+            break;
+        }
+        case "DH":
+        {
+            position = "지명타자";
+            break;
+        }
+        case "P":
+        {
+            position = "투수";
+            break;
+        }
+        case "C":
+        {
+            position = "포수";
+            break;
+        }
+    }
+    document.getElementById('player_profile').style.display = 'block';
+    document.getElementById('player_stat').style.display = 'block';
+
+    document.getElementById("player_profile1").innerHTML = player_data[selected_player[0]][4];
+    // document.getElementById("player_position").innerHTML = player_data[selected_player[0]][5];
+    document.getElementById("player_profile2").innerHTML = player_data[selected_player[0]][13];
+    document.getElementById("player_profile3").innerHTML = player_data[selected_player[0]][14];
+    document.getElementById("player_profile4").innerHTML = player_data[selected_player[0]][15];
+
+    if( player_data[selected_player[0]][5] == "타자")
+    {
+        document.getElementById("name_of_stat1").innerHTML = "타율";
+        document.getElementById("name_of_stat2").innerHTML = "도루";
+        document.getElementById("name_of_stat3").innerHTML = "타점";
+        document.getElementById("name_of_stat4").innerHTML = "홈런";
+        document.getElementById("name_of_stat5").innerHTML = "안타";
+    }
+    else
+    {
+        document.getElementById("name_of_stat1").innerHTML = "평균자책점";
+        document.getElementById("name_of_stat2").innerHTML = "탈삼진";
+        document.getElementById("name_of_stat3").innerHTML = "승";
+        document.getElementById("name_of_stat4").innerHTML = "홀드";
+        document.getElementById("name_of_stat5").innerHTML = "세이브";
+    }
+
+    document.getElementById("player_stat1").innerHTML = player_data[selected_player[0]][7];
+    document.getElementById("player_stat2").innerHTML = player_data[selected_player[0]][8];
+    document.getElementById("player_stat3").innerHTML = player_data[selected_player[0]][9];
+    document.getElementById("player_stat4").innerHTML = player_data[selected_player[0]][10];
+    document.getElementById("player_stat5").innerHTML = player_data[selected_player[0]][11];
+
 
     let back_color = "";
 

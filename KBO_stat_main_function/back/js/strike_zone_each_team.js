@@ -3,8 +3,39 @@ function strike_zone_each_team(num){
     document.getElementById("player_name").innerHTML = player_data[selected_player[0]][0] + " " + player_data[selected_player[0]][1] + "번 " + player_data[selected_player[0]][2];
     document.getElementById("player_image").src = '../../'+player_data[selected_player[0]][3];
     document.getElementById("player_image").alt = player_data[selected_player[0]][0] + " " + player_data[selected_player[0]][1] + "번 " + player_data[selected_player[0]][2];
-    document.getElementById("player_profile").innerHTML = player_data[selected_player[0]][4];
-    document.getElementById("player_position").innerHTML = player_data[selected_player[0]][5];
+    document.getElementById('player_profile').style.display = 'block';
+    document.getElementById('player_stat').style.display = 'block';
+
+    document.getElementById("player_profile1").innerHTML = player_data[selected_player[0]][4];
+    // document.getElementById("player_position").innerHTML = player_data[selected_player[0]][5];
+    document.getElementById("player_profile2").innerHTML = player_data[selected_player[0]][13];
+    document.getElementById("player_profile3").innerHTML = player_data[selected_player[0]][14];
+    document.getElementById("player_profile4").innerHTML = player_data[selected_player[0]][15];
+
+    if( player_data[selected_player[0]][5] == "타자")
+    {
+        document.getElementById("name_of_stat1").innerHTML = "타율";
+        document.getElementById("name_of_stat2").innerHTML = "도루";
+        document.getElementById("name_of_stat3").innerHTML = "타점";
+        document.getElementById("name_of_stat4").innerHTML = "홈런";
+        document.getElementById("name_of_stat5").innerHTML = "안타";
+    }
+    else
+    {
+        document.getElementById("name_of_stat1").innerHTML = "평균자책점";
+        document.getElementById("name_of_stat2").innerHTML = "탈삼진";
+        document.getElementById("name_of_stat3").innerHTML = "승";
+        document.getElementById("name_of_stat4").innerHTML = "홀드";
+        document.getElementById("name_of_stat5").innerHTML = "세이브";
+    }
+
+    document.getElementById("player_stat1").innerHTML = player_data[selected_player[0]][7];
+    document.getElementById("player_stat2").innerHTML = player_data[selected_player[0]][8];
+    document.getElementById("player_stat3").innerHTML = player_data[selected_player[0]][9];
+    document.getElementById("player_stat4").innerHTML = player_data[selected_player[0]][10];
+    document.getElementById("player_stat5").innerHTML = player_data[selected_player[0]][11];
+
+
     switch (player_data[selected_player[0]][0])
     {
         case "SSG":
