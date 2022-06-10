@@ -377,30 +377,7 @@
         <script src="back/js/if_select_first.js"></script>
         <script src="back/js/if_select_second.js"></script>
 
-        <script>
 
-            if(received_player != "")
-            {
-                alert(1);
-                if(player_data)
-                {
-
-                    for(let i = 0; i < player_data.length; i++) {
-                        if (player_data[i])
-                        {
-
-                            if(player_data[i][2] == received_player)
-                            {
-
-                                document.getElementById('select_players_first').options[i+1].selected = true;
-                                if_select_by_search(received_player);
-                                searched_player_select(received_player);
-                            }
-                        }
-                    }
-                }
-            }
-        </script>
 
     </div>
     <div id = "footer"></div>
@@ -411,5 +388,34 @@
 <script src="back/js/advanced_search.js"></script>
 <script src="back/js/advanced_search_second.js"></script>
 <script src="back/js/search_in_main.js"></script>
+<script>
+
+    if(received_player != "")
+    {
+        alert(1);
+        if(player_data)
+        {
+
+            for(let i = 0; i < player_data.length; i++) {
+                if (player_data[i])
+                {
+
+                    if(player_data[i][2] == received_player)
+                    {
+
+                        document.getElementById('select_players_first').options[i+1].selected = true;
+                        alert(document.getElementById('select_players_first').value);
+                        if_select_by_search(received_player);
+                        searched_player_select(received_player);
+
+                        // if_select_first();
+                        // first_player_select();
+                        player_position_graph()
+                    }
+                }
+            }
+        }
+    }
+</script>
 </body>
 </html>
