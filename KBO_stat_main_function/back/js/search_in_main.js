@@ -7,7 +7,7 @@ function search_player()
         {
             if (player_data[i]) {
                 if (player_data[i][2] == input_player) {
-                    window.open("test_div.html?" + input_player +"?"+ i);
+                    window.open("find_player.html?" + input_player +"?"+ i);
                     return;
                 }
 
