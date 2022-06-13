@@ -161,7 +161,7 @@ function if_select_second(){
         }
     }
     document.getElementById('player_profile_second').style.display = 'inline-block';
-    document.getElementById('player_stat_second').style.display = 'inline-block';
+    // document.getElementById('player_stat_second').style.display = 'inline-block';
 
     document.getElementById("player_profile1_second").innerHTML = position;
     // document.getElementById("player_position").innerHTML = player_data[selected_player[0]][5];
@@ -170,22 +170,22 @@ function if_select_second(){
     document.getElementById("player_profile4_second").innerHTML = player_data[selected_player[0]][14];
     document.getElementById("player_profile5_second").innerHTML = player_data[selected_player[0]][15];
 
-    if( player_data[selected_player[0]][5] == "타자")
-    {
-        document.getElementById("name_of_stat1_second").innerHTML = "타율";
-        document.getElementById("name_of_stat2_second").innerHTML = "도루";
-        document.getElementById("name_of_stat3_second").innerHTML = "타점";
-        document.getElementById("name_of_stat4_second").innerHTML = "홈런";
-        document.getElementById("name_of_stat5_second").innerHTML = "안타";
-    }
-    else
-    {
-        document.getElementById("name_of_stat1_second").innerHTML = "평균자책점";
-        document.getElementById("name_of_stat2_second").innerHTML = "탈삼진";
-        document.getElementById("name_of_stat3_second").innerHTML = "승";
-        document.getElementById("name_of_stat4_second").innerHTML = "홀드";
-        document.getElementById("name_of_stat5_second").innerHTML = "세이브";
-    }
+    // if( player_data[selected_player[0]][5] == "타자")
+    // {
+    //     document.getElementById("name_of_stat1_second").innerHTML = "타율";
+    //     document.getElementById("name_of_stat2_second").innerHTML = "도루";
+    //     document.getElementById("name_of_stat3_second").innerHTML = "타점";
+    //     document.getElementById("name_of_stat4_second").innerHTML = "홈런";
+    //     document.getElementById("name_of_stat5_second").innerHTML = "안타";
+    // }
+    // else
+    // {
+    //     document.getElementById("name_of_stat1_second").innerHTML = "평균자책점";
+    //     document.getElementById("name_of_stat2_second").innerHTML = "탈삼진";
+    //     document.getElementById("name_of_stat3_second").innerHTML = "승";
+    //     document.getElementById("name_of_stat4_second").innerHTML = "홀드";
+    //     document.getElementById("name_of_stat5_second").innerHTML = "세이브";
+    // }
 
     document.getElementById("player_stat1_second").innerHTML = player_data[selected_player[0]][7];
     document.getElementById("player_stat2_second").innerHTML = player_data[selected_player[0]][8];
