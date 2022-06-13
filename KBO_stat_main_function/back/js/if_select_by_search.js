@@ -15,6 +15,8 @@ function if_select_by_search(input_name){
 
     document.getElementById("player_name").innerHTML = player_data[searched_player][0] + " " + player_data[searched_player][1] + "번 " +received_player;
     document.getElementById("player_image").src = player_data[searched_player][3];
+    document.getElementById("player_image").style.display = 'block';
+    document.getElementById("radar_stat").style.display = 'block';
     switch (player_data[searched_player][0])
     {
         case "SSG":

@@ -2,6 +2,8 @@ function if_select_first(){
     var selected_player = document.getElementById('select_players_first').value.split('_');
     document.getElementById("player_name").innerHTML = "<span class='display-6'>" + player_data[selected_player[0]][0] + " " + player_data[selected_player[0]][1] + "번</span><br><p style='font-size:46px'><b>&nbsp&nbsp" + player_data[selected_player[0]][2] + "</b></p>";
     document.getElementById("player_image").src = player_data[selected_player[0]][3];
+    document.getElementById("player_image").style.display = 'block';
+    document.getElementById("radar_stat").style.display = 'block';
     switch (player_data[selected_player[0]][0])
     {
         case "SSG":
@@ -169,6 +171,7 @@ function if_select_first(){
         document.getElementById("name_of_stat3").innerHTML = "타점";
         document.getElementById("name_of_stat4").innerHTML = "홈런";
         document.getElementById("name_of_stat5").innerHTML = "안타";
+        // document.getElementById("strike_zone_name").innerHTML += "출루/타수";
     }
     else
     {
@@ -177,6 +180,7 @@ function if_select_first(){
         document.getElementById("name_of_stat3").innerHTML = "승";
         document.getElementById("name_of_stat4").innerHTML = "홀드";
         document.getElementById("name_of_stat5").innerHTML = "세이브";
+        // document.getElementById("strike_zone_name").innerHTML += "스트라이크/송구";
     }
 
     document.getElementById("player_stat1").innerHTML = player_data[selected_player[0]][7];

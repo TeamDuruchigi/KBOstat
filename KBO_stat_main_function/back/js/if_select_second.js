@@ -170,6 +170,10 @@ function if_select_second(){
     document.getElementById("player_profile4_second").innerHTML = player_data[selected_player[0]][14];
     document.getElementById("player_profile5_second").innerHTML = player_data[selected_player[0]][15];
 
+    document.getElementById("player_stat").style.top = '270px';
+    document.getElementById("player_stat").style.left = '740px';
+
+
     // if( player_data[selected_player[0]][5] == "타자")
     // {
     //     document.getElementById("name_of_stat1_second").innerHTML = "타율";

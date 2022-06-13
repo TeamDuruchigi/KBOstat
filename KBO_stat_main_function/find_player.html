@@ -290,6 +290,7 @@
           <div style="background-color: white; width: 300px; height: 300px;">
               <img id="player_image"  width = "500px" height = "500px"  alt=sorry>
           </div>
+
           <h1 id="player_name">&nbsp</h1>
         </div>
         <div width="300px" height="300px" style="display: inline-block; position: absolute; left: 650px; top: 90px;" id="radar_stat">
@@ -303,9 +304,18 @@
             <p id = "data3" style="position: relative; left: -5px; bottom: 0px; display: inline;">ㅤㅤ</p>
             <p id = "data4" style="position: relative; left: 110px; bottom: 0px; display: inline;">ㅤㅤ</p>
             <p id = "data5" style="position: relative; left: 130px; bottom: 150px; display: inline;">ㅤㅤ</p>
+            <!-- 플레이어 색 구분용 텍스트 넣는 중 위의 텍스트가 relative라 틀어져서 보류 -->
             <script src="back/js/player_radar_value.js"></script>
             <canvas id = "threejs" width="250px" height="250px" style="display: inline-block; position: relative; left: -150px; bottom: -10px;"></canvas>
         </div>
+        <script>
+            if(document.getElementById('select_players_first').value == 0)
+            {
+                document.getElementById('player_image').style.display = 'none';
+                document.getElementById('radar_stat').style.display = 'none';
+            }
+        </script>
+        <!--초기화면에 sorry있는거 지우는용 if_select_first 시 출력-->
         <table id="player_profile" style="position: relative; top: 450px; left: 160px; display: none;">
           <tr>
               <th colspan="2" class="h4 pb-2">선수 정보</th>
@@ -331,8 +341,11 @@
               <td id="player_profile5"></td>
           </tr>
         </table>
-        <table id="player_stat" style="position: relative; top: 270px; left: 740px; display: none;">
+        <table id="player_stat" style="position: relative; top: 470px; left: 160px; display: none;">
             <!--기존위치 top 470 left 160-->
+            <!-- 두 번째 선수 불러오면 270 740 으로 변경 -->
+            <!-- player_profile까지 적용하기에는 횡적으로 너무 길어져서 미적용-->
+
             <tr>
                 <th colspan="2" class="h4 pb-2">선수 스탯</th>
             </tr>
@@ -366,7 +379,7 @@
 
         <div style="position: absolute; left: 1160px; top: 30px;">
           <div style="background-color: white; width: 300px; height: 300px; display: none;" id="player_image_second_div">
-              <img id="player_image_second"  width = "500px" height = "500px"  alt=sorry>
+              <img id="player_image_second"  width = "500px" height = "500px">
           </div>
           <h1 id="player_name_second" style="display: none;">a</h1>
         </div>
@@ -417,6 +430,7 @@
 
 <!--        </table>-->
 
+<!--        <p id="strike_zone_name"></p>-->
         <div id="strike_zone">
         </div>
         <!--<script src="back/js/make_strike_zone.js"></script>-->
