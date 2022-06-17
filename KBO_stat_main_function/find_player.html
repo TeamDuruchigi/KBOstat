@@ -103,6 +103,7 @@
                         <option name="Find_player_by_team" value="NC">롯데</option>
                         <option name="Find_player_by_team" value="삼성">삼성</option>
                         <option name="Find_player_by_team" value="SSG">SSG</option>
+                        <option name="Find_player_by_team_second" value="NC">NC</option>
                     </select>
                     <label id="label_for_Find_player_by_position" for="Find_player_by_position">포지션 별로 보기</label>
                     <select class="form-select form-select-sm mb-1" name="Find_player_by_position" id="Find_player_by_position">
@@ -225,6 +226,7 @@
                             <option name="Find_player_by_team_second" value="NC">롯데</option>
                             <option name="Find_player_by_team_second" value="삼성">삼성</option>
                             <option name="Find_player_by_team_second" value="SSG">SSG</option>
+                            <option name="Find_player_by_team_second" value="NC">NC</option>
                         </select>
                         <label id="label_for_Find_player_by_throw_hand_second" for="Find_player_by_throw_hand_second">투구 시 주 손 별로 보기</label>
                         <select class="form-select form-select-sm mb-1" name="Find_player_by_throw_hand_second" id="Find_player_by_throw_hand_second">
@@ -464,7 +466,7 @@
                         if_select_by_search(received_player);
                         searched_player_select(received_player);
 
-                        // if_select_first();
+                        if_select_first();
                         // first_player_select();
                         player_position_graph()
                     }

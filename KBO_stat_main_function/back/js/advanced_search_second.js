@@ -14,7 +14,6 @@ function detail_player_list_second()
     {
         var first_selected_player = document.getElementById('select_players_first').value.split('_');
         var first_player_position = player_data[first_selected_player[0]][5];
-        alert(first_player_position)
         for(let j = 0; j <player_data.length; j++)
         {
             if(player_data[j])
