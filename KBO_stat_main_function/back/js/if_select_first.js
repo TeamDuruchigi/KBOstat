@@ -166,29 +166,154 @@ function if_select_first(){
 
     if( player_data[selected_player[0]][5] == "타자")
     {
-        document.getElementById("name_of_stat1").innerHTML = "타율";
-        document.getElementById("name_of_stat2").innerHTML = "도루";
-        document.getElementById("name_of_stat3").innerHTML = "타점";
-        document.getElementById("name_of_stat4").innerHTML = "홈런";
-        document.getElementById("name_of_stat5").innerHTML = "안타";
+        document.getElementById("player_stat1").innerHTML = "타율 ";
+        document.getElementById("player_stat2").innerHTML = "도루 ";
+        document.getElementById("player_stat3").innerHTML = "타점 ";
+        document.getElementById("player_stat4").innerHTML = "홈런 ";
+        document.getElementById("player_stat5").innerHTML = "안타 ";
         // document.getElementById("strike_zone_name").innerHTML += "출루/타수";
     }
     else
     {
-        document.getElementById("name_of_stat1").innerHTML = "평균자책점";
-        document.getElementById("name_of_stat2").innerHTML = "탈삼진";
-        document.getElementById("name_of_stat3").innerHTML = "승";
-        document.getElementById("name_of_stat4").innerHTML = "홀드";
-        document.getElementById("name_of_stat5").innerHTML = "세이브";
+        document.getElementById("player_stat1").innerHTML = "평균자책점";
+        document.getElementById("player_stat2").innerHTML = "탈삼진";
+        document.getElementById("player_stat3").innerHTML = "승";
+        document.getElementById("player_stat4").innerHTML = "홀드";
+        document.getElementById("player_stat5").innerHTML = "세이브";
         // document.getElementById("strike_zone_name").innerHTML += "스트라이크/송구";
     }
 
-    document.getElementById("player_stat1").innerHTML = player_data[selected_player[0]][7];
-    document.getElementById("player_stat2").innerHTML = player_data[selected_player[0]][8];
-    document.getElementById("player_stat3").innerHTML = player_data[selected_player[0]][9];
-    document.getElementById("player_stat4").innerHTML = player_data[selected_player[0]][10];
-    document.getElementById("player_stat5").innerHTML = player_data[selected_player[0]][11];
+    document.getElementById("name_of_stat1").innerHTML = player_data[selected_player[0]][7];
+    document.getElementById("name_of_stat2").innerHTML = player_data[selected_player[0]][8];
+    document.getElementById("name_of_stat3").innerHTML = player_data[selected_player[0]][9];
+    document.getElementById("name_of_stat4").innerHTML = player_data[selected_player[0]][10];
+    document.getElementById("name_of_stat5").innerHTML = player_data[selected_player[0]][11];
 
+    document.getElementById("player_stat1").style.fontSize = '20px';
+    document.getElementById("player_stat2").style.fontSize = '20px';
+    document.getElementById("player_stat3").style.fontSize = '20px';
+    document.getElementById("player_stat4").style.fontSize = '20px';
+    document.getElementById("player_stat5").style.fontSize = '20px';
+
+    document.getElementById("name_of_stat1").style.fontSize = '16px';
+    document.getElementById("name_of_stat2").style.fontSize = '16px';
+    document.getElementById("name_of_stat3").style.fontSize = '16px';
+    document.getElementById("name_of_stat4").style.fontSize = '16px';
+    document.getElementById("name_of_stat5").style.fontSize = '16px';
+
+    var first_selected_player = document.getElementById('select_players_first').value.split('_');
+    var first_player_position = player_data[first_selected_player[0]][5];
+    document.getElementById('label_for_players_second').innerHTML = "Choose in "+ first_player_position + " player";
+
+    var first_selected_player = document.getElementById('select_players_first').value.split('_');
+    var first_player_position = player_data[first_selected_player[0]][5];
+    let arr_length_second = 1;
+    var arr = "<option name = 'select_player'  value='0'>선수 선택</option>";
+    for(let i = 0; i <player_data.length; i++)
+    {
+        if(player_data)
+        {
+            if(player_data[i])
+            {
+
+                if(player_data[i][5]== first_player_position)
+                {
+                    arr += "<option name = 'select_player'  value='" + i + "_" + player_data[i][0] + "_" + player_data[i][1] + "_" + player_data[i][2] + "'>" + arr_length_second + ". " + player_data[i][0] + " " + player_data[i][1] + "번 " + player_data[i][2] + "</option>";
+                    arr_length_second++;
+                }
+            }
+        }
+    }
+    document.getElementById('select_players_second').innerHTML = arr;
+    document.getElementById("player_name_second").style.display = 'none';
+    document.getElementById("player_image_second_div").style.display = "none";
+    document.getElementById('player_profile_second').style.display = 'none';
+    document.getElementById('strike_zone').style.display = 'block';
+
+
+    document.getElementById("player_stat").style.top = '470px';
+    document.getElementById("player_stat").style.left = '160px';
+    scene.remove(radar_second);
+
+    var player_stat_div = document.getElementById("player_stat");
+    var player_stat_title = document.getElementById("player_stat_title");
+
+    var player_stat1 = document.getElementById("player_stat1");
+    var player_stat2 = document.getElementById("player_stat2");
+    var player_stat3 = document.getElementById("player_stat3");
+    var player_stat4 = document.getElementById("player_stat4");
+    var player_stat5 = document.getElementById("player_stat5");
+
+    var player_stat_name1 = document.getElementById("name_of_stat1");
+    var player_stat_name2 = document.getElementById("name_of_stat2");
+    var player_stat_name3 = document.getElementById("name_of_stat3");
+    var player_stat_name4 = document.getElementById("name_of_stat4");
+    var player_stat_name5 = document.getElementById("name_of_stat5");
+
+    const regExp = /[가-힣]/g;
+    if(regExp.test(player_stat1.innerHTML))
+    {
+
+        player_stat_div.style.left = '160px';
+        player_stat_div.style.top = '470px';
+
+        player_stat1.style.position = 'static';
+        player_stat2.style.position = 'static';
+        player_stat3.style.position = 'static';
+        player_stat4.style.position = 'static';
+        player_stat5.style.position = 'static';
+        player_stat_title.style.position = 'static';
+
+        player_stat1.style.textAlign = 'left';
+        player_stat2.style.textAlign = 'left';
+        player_stat3.style.textAlign = 'left';
+        player_stat4.style.textAlign = 'left';
+        player_stat5.style.textAlign = 'left';
+
+        player_stat_name1.style.textAlign = 'left';
+        player_stat_name2.style.textAlign = 'left';
+        player_stat_name3.style.textAlign = 'left';
+        player_stat_name4.style.textAlign = 'left';
+        player_stat_name5.style.textAlign = 'left';
+
+        player_stat1.style.width = '150px';
+        player_stat2.style.width = '150px';
+        player_stat3.style.width = '150px';
+        player_stat4.style.width = '150px';
+        player_stat5.style.width = '150px';
+
+        document.getElementById("player_stat1").style.fontSize = '20px';
+        document.getElementById("player_stat2").style.fontSize = '20px';
+        document.getElementById("player_stat3").style.fontSize = '20px';
+        document.getElementById("player_stat4").style.fontSize = '20px';
+        document.getElementById("player_stat5").style.fontSize = '20px';
+
+        document.getElementById("name_of_stat1").style.fontSize = '16px';
+        document.getElementById("name_of_stat2").style.fontSize = '16px';
+        document.getElementById("name_of_stat3").style.fontSize = '16px';
+        document.getElementById("name_of_stat4").style.fontSize = '16px';
+        document.getElementById("name_of_stat5").style.fontSize = '16px';
+
+        // player_stat1.style.left = '-50px';
+        // player_stat2.style.left = '-60px';
+        // player_stat3.style.left = '-70px';
+        // player_stat4.style.left = '-80px';
+        // player_stat5.style.left = '-90px';
+        document.getElementById("player_stat1_second").innerHTML = "";
+        document.getElementById("player_stat2_second").innerHTML = "";
+        document.getElementById("player_stat3_second").innerHTML = "";
+        document.getElementById("player_stat4_second").innerHTML = "";
+        document.getElementById("player_stat5_second").innerHTML = "";
+
+        document.getElementById("player_profile1_second").innerHTML = "";
+        document.getElementById("player_profile2_second").innerHTML = "";
+        document.getElementById("player_profile3_second").innerHTML = "";
+        document.getElementById("player_profile4_second").innerHTML = "";
+        document.getElementById("player_profile5_second").innerHTML = "";
+
+
+
+    }
 
     let back_color = "";
 

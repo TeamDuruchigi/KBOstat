@@ -1,7 +1,7 @@
 function detail_player_list()
 {
     var arr;
-    arr = "<option name = 'select_player'  value='0'>test_zero_select</option>";
+    arr = "<option name = 'select_player'  value='0'>선수 선택</option>";
     var player_list_team = document.getElementById('Find_player_by_team').value;
     var player_list_position = document.getElementById('Find_player_by_position').value;
     var player_list_throw_hand = document.getElementById('Find_player_by_throw_hand').value;

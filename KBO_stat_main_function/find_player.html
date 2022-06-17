@@ -157,7 +157,7 @@
             <script src="back/js/receive_from_main.js"></script>
 
             <br>
-            <input id="call_second_player_selection" name="detail_search" type="checkbox" value="on" onclick="display_second_select(); second_player_label_change(); second_player_select_change();">
+            <input id="call_second_player_selection" name="detail_search" type="checkbox" value="on" onclick="display_second_select(); second_player_label_change();">
             <label id="label_for_call_second_player_selection" for="call_second_player_selection">두 번째 선수 불러오기</label>
             <div id="now_select_second" style="display: none">
                 <div>
@@ -166,9 +166,9 @@
                         <script>
                             function second_player_label_change(){
 
-                                var first_selected_player = document.getElementById('select_players_first').value.split('_');
-                                var first_player_position = player_data[first_selected_player[0]][5];
-                                document.getElementById('label_for_players_second').innerHTML = "Choose in "+ first_player_position + " player";
+                                // var first_selected_player = document.getElementById('select_players_first').value.split('_');
+                                // var first_player_position = player_data[first_selected_player[0]][5];
+                                // document.getElementById('label_for_players_second').innerHTML = "Choose in "+ first_player_position + " player";
                             }
                         </script>
                         <select class="form-select form-select-sm mb-2" name ='select_players' id='select_players_second' onchange='if_select_second(); second_player_select();'>
@@ -180,31 +180,31 @@
                             <!--                        arr_length_second++;-->ㅣ
                             <!--                    }-->
                             <!--                    </script>-->
-                            <script>
+<!--                            <script>-->
 
-                                function second_player_select_change(){
-                                    var first_selected_player = document.getElementById('select_players_first').value.split('_');
-                                    var first_player_position = player_data[first_selected_player[0]][5];
-                                    let arr_length_second = 1;
-                                    var arr = "<option name = 'select_player'  value='0'>선수 선택</option>";
-                                    for(let i = 0; i <player_data.length; i++)
-                                    {
-                                        if(player_data)
-                                        {
-                                            if(player_data[i])
-                                            {
+<!--                                function second_player_select_change(){-->
+<!--                                    var first_selected_player = document.getElementById('select_players_first').value.split('_');-->
+<!--                                    var first_player_position = player_data[first_selected_player[0]][5];-->
+<!--                                    let arr_length_second = 1;-->
+<!--                                    var arr = "<option name = 'select_player'  value='0'>선수 선택</option>";-->
+<!--                                    for(let i = 0; i <player_data.length; i++)-->
+<!--                                    {-->
+<!--                                        if(player_data)-->
+<!--                                        {-->
+<!--                                            if(player_data[i])-->
+<!--                                            {-->
 
-                                                if(player_data[i][5]== first_player_position)
-                                                {
-                                                    arr += "<option name = 'select_player'  value='" + i + "_" + player_data[i][0] + "_" + player_data[i][1] + "_" + player_data[i][2] + "'>" + arr_length_second + ". " + player_data[i][0] + " " + player_data[i][1] + "번 " + player_data[i][2] + "</option>";
-                                                    arr_length_second++;
-                                                }
-                                            }
-                                        }
-                                    }
-                                    document.getElementById('select_players_second').innerHTML = arr;
-                                }
-                            </script>
+<!--                                                if(player_data[i][5]== first_player_position)-->
+<!--                                                {-->
+<!--                                                    arr += "<option name = 'select_player'  value='" + i + "_" + player_data[i][0] + "_" + player_data[i][1] + "_" + player_data[i][2] + "'>" + arr_length_second + ". " + player_data[i][0] + " " + player_data[i][1] + "번 " + player_data[i][2] + "</option>";-->
+<!--                                                    arr_length_second++;-->
+<!--                                                }-->
+<!--                                            }-->
+<!--                                        }-->
+<!--                                    }-->
+<!--                                    document.getElementById('select_players_second').innerHTML = arr;-->
+<!--                                }-->
+<!--                            </script>-->
                         </select>
                     </form>
                   <input id="detail_search_second" name="detail_search_second" type="checkbox" value="on" onclick="display_detail_find_second()">
@@ -292,7 +292,7 @@
 
           <h1 id="player_name">&nbsp</h1>
         </div>
-        <div width="300px" height="300px" style="display: inline-block; position: absolute; left: 650px; top: 90px;" id="radar_stat">
+        <div width="300px" height="300px" style="display: inline-block; position: absolute; left: 670px; top: 90px;" id="radar_stat">
             <!--            <p id = "data1" style="position: relative; left: 147px; bottom: 240px; display: inline;">타율</p>-->
             <!--            <p id = "data2" style="position: relative; left: -25px; bottom: 150px; display: inline;">도루</p>-->
             <!--            <p id = "data3" style="position: relative; left: -5px; bottom: 0px; display: inline;">타점</p>-->
@@ -346,31 +346,31 @@
             <!-- player_profile까지 적용하기에는 횡적으로 너무 길어져서 미적용-->
 
             <tr>
-                <th colspan="2" class="h4 pb-2">선수 스탯</th>
+                <th colspan="3" class="h4 pb-2" id="player_stat_title">선수 스탯</th>
             </tr>
             <tr>
-                <td id="player_stat1"></td>
-                <td class="h5 pb-1 pe-4" id="name_of_stat1"></td>
+                <td class="p4" id="player_stat1" style="width: 70px;"></td>
+                <td class="h5 ps-4 pb-1 pe-4" id="name_of_stat1"></td>
                 <td id="player_stat1_second"></td>
             </tr>
             <tr>
-                <td id="player_stat2"></td>
-                <td class="h5 pb-1 pe-4" id="name_of_stat2"></td>
+                <td class="p4" id="player_stat2" style="width: 70px;"></td>
+                <td class="h5 ps-4 pb-1 pe-4" id="name_of_stat2"></td>
                 <td id="player_stat2_second"></td>
             </tr>
             <tr>
-                <td id="player_stat3"></td>
-                <td class="h5 pb-1 pe-4" id="name_of_stat3"></td>
+                <td class="p4" id="player_stat3" style="width: 70px;"></td>
+                <td class="h5 ps-4 pb-1 pe-4" id="name_of_stat3"></td>
                 <td id="player_stat3_second"></td>
             </tr>
             <tr>
-                <td id="player_stat4"></td>
-                <td class="h5 pb-1 pe-4" id="name_of_stat4"></td>
+                <td class="p4" id="player_stat4" style="width: 70px;"></td>
+                <td class="h5 ps-4 pb-1 pe-4" id="name_of_stat4"></td>
                 <td id="player_stat4_second"></td>
             </tr>
             <tr>
-                <td id="player_stat5"></td>
-                <td class="h5 pb-1 pe-4" id="name_of_stat5"></td>
+                <td class="p4" id="player_stat5" style="width: 70px;"></td>
+                <td class="h5 ps-4 pb-1 pe-4" id="name_of_stat5"></td>
                 <td id="player_stat5_second"></td>
             </tr>
 

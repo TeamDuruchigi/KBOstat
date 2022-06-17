@@ -1,7 +1,7 @@
 function detail_player_list_second()
 {
     var arr;
-    arr = "<option name = 'select_player'  value='0'>test_zero_select</option>";
+    arr = "<option name = 'select_player'  value='0'>선수 선택</option>";
     var player_list_team_second = document.getElementById('Find_player_by_team_second').value;
     var player_list_throw_hand_second = document.getElementById('Find_player_by_throw_hand_second').value;
     var player_list_throw_style_second = document.getElementById('Find_player_by_throw_style_second').value;

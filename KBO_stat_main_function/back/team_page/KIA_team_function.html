@@ -106,38 +106,45 @@
   <div class="container mt-6 pt-5 ps-5">
       <script>
           let cnt_three = 0;
+          if(player_data)
+          {
           for(let i =0; i<player_data.length; i++)
           {
 
-              if(player_data[i][0] == "KIA")
+              if(player_data[i])
               {
-                  document.write("<div class='player_list_div' id='"+i+"_player' onclick ='now_player_stat(this.id); strike_zone_each_team(this.id); player_select_each(this.id); player_position_graph(this.id);'>" +
-                      "<div style='width: 398px; height: 456px; background-color: white'>" +
-                      "<img class='player_list_hover' src=../../"+player_data[i][3]+" style='width : 380px; height : 456px; background-color: white;'>" +
-                      "</div>"+
-                      "<br><h2 class='d-inline display-5 fw-bold me-3' style='color: rgb(200, 200, 200);'>"+player_data[i][1]+"</h2>"+
-                      "<h3 class='d-inline fs-2' style='color: white;'>"+player_data[i][2]+"</h3></div>");
-                  var ith_player_style = document.getElementById(i+'_player').style;
-                  cnt_three++;
-                  if(cnt_three == 3)
+                  if(player_data[i][0] == "KIA")
                   {
-                      document.write("</br></br>");
-                      cnt_three = 0;
+                      document.write("<div class='player_list_div' id='"+i+"_player' onclick ='now_player_stat(this.id); strike_zone_each_team(this.id); player_select_each(this.id); player_position_graph(this.id);'>" +
+                          "<div style='width: 398px; height: 456px; background-color: white'>" +
+                          "<img class='player_list_hover' src='../../"+player_data[i][3]+"' width='398px' height='456px'style='object-fit: none;'>" +
+                          "</div>"+
+                          "<br><h2 class='d-inline display-5 fw-bold me-3' style='color: rgb(200, 200, 200);'>"+player_data[i][1]+"</h2>"+
+                          "<h3 class='d-inline fs-2' style='color: white;'>"+player_data[i][2]+"</h3></div>");
+                      var ith_player_style = document.getElementById(i+'_player').style;
+                      cnt_three++;
+                      if(cnt_three == 3)
+                      {
+                          document.write("</br></br>");
+                          cnt_three = 0;
+                      }
+
+                      ith_player_style.content = "";
+                      ith_player_style.opacity = '1';
+                      ith_player_style.position = 'relative';
+                      ith_player_style.width = '400px';
+                      ith_player_style.height = '600px';
+                      ith_player_style.top = '0px';
+                      ith_player_style.left = '0px';
+                      ith_player_style.right = '0px';
+                      ith_player_style.bottom = '0px';
+                      ith_player_style.backgroundColor = 'rgb(234, 0, 41)';
+                      ith_player_style.zIndex = '1';
+
                   }
-
-                  ith_player_style.content = "";
-                  ith_player_style.opacity = '1';
-                  ith_player_style.position = 'relative';
-                  ith_player_style.width = '400px';
-                  ith_player_style.height = '600px';
-                  ith_player_style.top = '0px';
-                  ith_player_style.left = '0px';
-                  ith_player_style.right = '0px';
-                  ith_player_style.bottom = '0px';
-                  ith_player_style.backgroundColor = 'rgb(234, 0, 41)';
-                  ith_player_style.zIndex = '1';
-
               }
+
+          }
           }
       </script>
 
