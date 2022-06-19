@@ -42,7 +42,7 @@ function detail_player_list()
                     {
                         check_value++;
                     }
-                    else if(player_list_position == player_data[i][5])
+                    else if(player_list_position == player_data[i][4])
                     {
                         check_value++;
                     }
